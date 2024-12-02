@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Audiowide";
+    src: local('Audiowide'), url(./app/assets/fonts/Audiowide-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Lacquer";
+    src: local('Lacquer'), url(./app/assets/fonts/Lacquer-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "RubikGlitch";
+    src: local('RubikGlitch'), url(./app/assets/fonts/RubikGlitch-Regular.ttf) format('truetype');
+    font-face: swap;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: local('RobotoMono'), url(./app/assets/fonts/RobotoMono.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Adder";
+    src: local('Adder'), url(./app/assets/fonts/Adder.otf) format('opentype');
+}
+
+:root {
+    --grim-pink: #ec008e;
+    --grim-cyan: #01b8f2;
+    --yellow: #FFE900;
+    --dark-purple: #120013;
+    --lighter-purple: #3d0040;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(135deg, black,  black, var(--dark-purple), var(--dark-purple), var(--lighter-purple));
+    color: white;
+    font-size: 1rem;
+    font-family: 'RobotoMono';
+}
+
+.grimm-card {
+    position: relative;
+    background-color: var(--grim-cyan);
+    color: white;
+    padding: 0.5rem;
+    clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
+    display: grid;
+    grid-template-columns: 1fr;
+    .card-header {
+        display: flex;
+        flex-direction: row;
+
+    }
+    .card-title {
+        background-color: black;
+        color: white;
+        font-family: 'Audiowide';
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        padding: 0 1.5rem 0 0.5rem;
+        clip-path: polygon(calc(100% - 25px) 0, 100% 25px, 100% 100%, 0 100%, 0 0);
+        text-shadow: 1px 2px 0 var(--grim-cyan);
+        width: max-content;
+    }
+    .card-body {
+        background-color: white;
+        color: black;
+        padding: 0.3rem 1rem 1rem 1rem;
+        clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
+    }
+}
+
+.skew {
+    transform: rotate(-0.5deg);
+}
+
+.clickable {
+    user-select: none;
+    cursor: pointer;
+    &.card-title {
+        &:hover {
+            font-size: 1.5rem;
+            transition: all .06s ease-in-out !important;
+            background-color: var(--yellow);
+            color: black;
+            text-shadow: 1px 2px 0 white;
+
+        }
+        &:active {
+            font-size: 1.3rem;
+        }
+    }
+    &.info {
+        background-color: black;
+        color: white;
+        &:hover {
+            background-color: var(--yellow);
+            color: black;
+            font-weight: bold;
+        }
+        &:active {
+            background-color: black;
+            color: var(--grim-pink);
+        }
+    }
+}
+
+.neon-text {
+    color: white;
+    text-shadow: 
+        0 0 5px white,
+        0 0 25px var(--grim-pink),
+        0 0 30px var(--grim-pink),
+        0 0 35px var(--grim-pink);
+}
