@@ -24,44 +24,81 @@
     src: local('Adder'), url(./app/assets/fonts/Adder.otf) format('opentype');
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: var(--grim-pink);
+border-radius: 5px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: var(--grim-cyan);
+}
+
 :root {
     --grim-pink: #ec008e;
     --grim-cyan: #01b8f2;
     --yellow: #FFE900;
     --dark-purple: #120013;
     --lighter-purple: #3d0040;
+    --off-white: #ebebeb;
+    --grim-window-border: 2px solid var(--grim-cyan);
 }
 
 html, body {
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
 body {
-    background-image: linear-gradient(135deg, black,  black, var(--dark-purple), var(--dark-purple), var(--lighter-purple));
-    color: white;
+    background-color: var(--dark-purple);
+    color: var(--off-white);
     font-size: 1rem;
     font-family: 'RobotoMono';
+
+    background-position: 0px 0px;
+    background-size: 40px 40px;
+    background-image:
+        radial-gradient(circle, var(--grim-pink) 1px, rgba(0, 0, 0, 0) 1px);
+    animation: move-background 120s infinite linear;
+}
+
+
+
+.grimm-card-container {
+    filter: 
+        drop-shadow(-5px 5px hsla(194, 99%, 48%, 0.313))
 }
 
 .grimm-card {
     position: relative;
     background-color: var(--grim-cyan);
-    color: white;
+    color: var(--off-white);
     padding: 0.5rem;
     clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     .card-header {
         display: flex;
         flex-direction: row;
-
     }
+
     .card-title {
         background-color: black;
-        color: white;
+        color: var(--off-white);
         font-family: 'Audiowide';
         text-transform: uppercase;
         font-size: 1.3rem;
@@ -71,10 +108,75 @@ body {
         width: max-content;
     }
     .card-body {
-        background-color: white;
+        background-color: var(--off-white);
         color: black;
         padding: 0.3rem 1rem 1rem 1rem;
         clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
+    }
+}
+
+.grimm-window-card {
+    border: var(--grim-window-border);
+    background-color: hsla(194, 99%, 30%, 0.5);
+    padding: 2px;
+    box-shadow: 10px 10px rgba(1, 117, 152, 0.5);
+    .grimm-window-inner {
+        border: var(--grim-window-border);
+        background-color: hsla(194, 99%, 30%);
+        .grimm-window-header {
+            border-bottom: var(--grim-window-border);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr;
+            .header {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 0.3rem;
+                width: 100%;
+                &.clickable {
+                    &:hover {
+                        transition: all .06s ease-in-out !important;
+                        font-size: 1.1rem;
+                        background-color: black;
+                        color: var(--yellow);
+                    }
+                    &:active {
+                        color: var(--grim-pink);
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .deco {
+                padding: 0 0.5rem;
+                border-right: var(--grim-window-border);
+                background-color: hsla(194, 99%, 20%);
+                place-self: stretch center;
+                &.clickable {
+                    &:hover {
+                        transition: all .06s ease-in-out !important;
+                        font-size: 1.1rem;
+                        background-color: black;
+                        color: var(--yellow);
+                    }
+                    &:active {
+                        color: var(--grim-pink);
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .grimm-window-data {
+            background-color: var(--off-white);
+            color: black;
+            padding: 0.3rem 1rem;
+            font-family: 'Adder';
+            line-height: 1.4;
+        }
+        .grimm-window-footer {
+            background-color: transparent;
+
+        }
     }
 }
 
@@ -91,7 +193,7 @@ body {
             transition: all .06s ease-in-out !important;
             background-color: var(--yellow);
             color: black;
-            text-shadow: 1px 2px 0 white;
+            text-shadow: 1px 2px 0 var(--off-white);
 
         }
         &:active {
@@ -100,7 +202,7 @@ body {
     }
     &.info {
         background-color: black;
-        color: white;
+        color: var(--off-white);
         &:hover {
             background-color: var(--yellow);
             color: black;
@@ -120,4 +222,66 @@ body {
         0 0 25px var(--grim-pink),
         0 0 30px var(--grim-pink),
         0 0 35px var(--grim-pink);
+}
+
+.grimm-scroller {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 8px;
+    ul {
+        font-size: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 100%;
+        animation: scrolling-text 180s linear infinite;
+    }
+}
+
+@keyframes scrolling-text {
+    to {
+        transform: translateX(calc(-100% - 8px));
+    }
+}
+
+@keyframes glitch{
+    0%, 100%{
+      top: -7px;
+      left: 0;
+      opacity: 1;
+    }
+    20%{
+      top: 0;
+      left: -10px;
+      opacity: 0.7;
+    }
+    40%{
+      top: 7px;
+      left: 0;
+      opacity: 0.2;
+    }
+    60%{
+      top: 0;
+      left: 10px;
+      opacity: 0.3;
+    }
+    80%{
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes move-background {
+    from {
+        background-position: 0 0;
+    } to {
+        background-position: 50% 100%;
+    }
 }
