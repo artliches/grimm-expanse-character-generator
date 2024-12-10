@@ -53,7 +53,7 @@ background: var(--grim-cyan);
     --dark-purple: #120013;
     --lighter-purple: #3d0040;
     --off-white: #ebebeb;
-    --grim-window-border: 2px solid var(--grim-cyan);
+    --grim-window-border: 2px solid rgba(1, 117, 152);
 }
 
 html, body {
@@ -115,73 +115,13 @@ body {
     }
 }
 
-.grimm-window-card {
-    border: var(--grim-window-border);
-    background-color: hsla(194, 99%, 30%, 0.5);
-    padding: 2px;
-    box-shadow: 10px 10px rgba(1, 117, 152, 0.5);
-    .grimm-window-inner {
-        border: var(--grim-window-border);
-        background-color: hsla(194, 99%, 30%);
-        .grimm-window-header {
-            border-bottom: var(--grim-window-border);
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-rows: 1fr;
-            .header {
-                text-align: center;
-                text-transform: uppercase;
-                font-weight: bold;
-                letter-spacing: 0.3rem;
-                width: 100%;
-                &.clickable {
-                    &:hover {
-                        transition: all .06s ease-in-out !important;
-                        font-size: 1.1rem;
-                        background-color: black;
-                        color: var(--yellow);
-                    }
-                    &:active {
-                        color: var(--grim-pink);
-                        font-size: 1rem;
-                    }
-                }
-            }
-            .deco {
-                padding: 0 0.5rem;
-                border-right: var(--grim-window-border);
-                background-color: hsla(194, 99%, 20%);
-                place-self: stretch center;
-                &.clickable {
-                    &:hover {
-                        transition: all .06s ease-in-out !important;
-                        font-size: 1.1rem;
-                        background-color: black;
-                        color: var(--yellow);
-                    }
-                    &:active {
-                        color: var(--grim-pink);
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-        .grimm-window-data {
-            background-color: var(--off-white);
-            color: black;
-            padding: 0.3rem 1rem;
-            font-family: 'Adder';
-            line-height: 1.4;
-        }
-        .grimm-window-footer {
-            background-color: transparent;
-
-        }
-    }
-}
-
 .skew {
-    transform: rotate(-0.5deg);
+    &-left {
+        transform: rotate(-0.5deg);
+    }
+    &-right {
+        transform: rotate(0.5deg);
+    }
 }
 
 .clickable {
@@ -213,6 +153,16 @@ body {
             color: var(--grim-pink);
         }
     }
+    &.tool-button {
+        &:hover {
+            font-size: 1rem !important;
+        }
+        &:active {
+            font-size: 0.8rem !important;
+            background-color: black !important;
+            color: var(--yellow) !important;
+        }
+    }
 }
 
 .neon-text {
@@ -229,6 +179,7 @@ body {
     overflow: hidden;
     user-select: none;
     gap: 8px;
+    background-color: var(--grim-cyan);
     ul {
         font-size: 0.5rem;
         margin: 0;
@@ -283,5 +234,33 @@ body {
         background-position: 0 0;
     } to {
         background-position: 50% 100%;
+    }
+}
+
+@media print {
+    * {
+        color: black !important;
+    }
+
+    .toolbar {
+        display: none;
+    }
+
+    .neon-text {
+        text-shadow: none;
+    }
+
+    .grimm-layout {
+        margin: 0 0.5rem;
+    }
+
+    .grimm-card-container {
+        filter: drop-shadow(-5px 5px hsla(0, 0%, 0%, 0.313));
+        .card-header {
+            border-bottom: 2px solid black;
+            .card-title {
+                text-shadow: none;
+            }
+        }
     }
 }

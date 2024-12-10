@@ -56,8 +56,11 @@ header {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-auto-rows: auto;
-                .identity {
+                .toolbar {
                     grid-area: 1 / span 2;
+                }
+                .identity {
+                    grid-area: 2 / span 2;
                 }
             }
         }

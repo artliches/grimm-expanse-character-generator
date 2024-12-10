@@ -6,7 +6,10 @@
   </header>
   <div class="grimm-body-layout">
     <div class="grimm-body">
-
+      <app-toolbar
+        class="toolbar"
+        (printEmitter)="print()"
+      ></app-toolbar>
       <app-grimm-identity class="identity"></app-grimm-identity>
 
     </div>

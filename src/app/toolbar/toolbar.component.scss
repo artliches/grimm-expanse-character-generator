@@ -1,0 +1,20 @@
+.toolbar-layout {
+    position: relative;
+    border-bottom: 2px solid var(--yellow);
+    width: 100%;
+    .clickable {
+        font-size: 0.8rem;
+        width: max-content;
+        font-weight: bold;
+        font-family: 'Adder';
+        letter-spacing: 0.3rem;
+
+        padding: 0.3rem 0.3rem 0 0.3rem;
+        background-color: var(--yellow);
+        color: black;
+        border: 2px solid hsl(55, 100%, 30%);
+        border-right-width: 4px;
+        border-left: none;
+        border-bottom: none;
+    }
+}
