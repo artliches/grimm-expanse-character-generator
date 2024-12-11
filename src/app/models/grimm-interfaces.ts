@@ -16,7 +16,7 @@ export interface Job {
         title: string,
         table: string[],
     },
-    skillz: string[],
+    skillz: {title: string, descrip: string}[],
     extras: string[],
     stats: {
         hp: number,
@@ -29,5 +29,13 @@ export interface Job {
     gear: {
         weapons: number,
         armor: number,
+    }
+};
+
+export interface DisplayedJob {
+    detail: string,
+    skillz: {
+      title: string,
+      descrip: string,
     }
 };

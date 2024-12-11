@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Job } from '../models/grimm-interfaces';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { DisplayedJob, Job } from '../models/grimm-interfaces';
 import { CommonModule } from '@angular/common';
 import { RandomNumberService } from '../services/random-number.service';
 
@@ -9,22 +9,30 @@ import { RandomNumberService } from '../services/random-number.service';
   templateUrl: './grimm-job.component.html',
   styleUrl: './grimm-job.component.scss'
 })
-export class GrimmJobComponent implements OnInit {
+export class GrimmJobComponent implements OnChanges {
   constructor(
     private random: RandomNumberService
   ) {}
 
   @Input() currentJob: Job = {} as Job;
-  displayedJob: {
-    detail: string,
-  } = {
-    detail: ''
+  @Output() newJobEmitter: EventEmitter<boolean> = new EventEmitter();
+  displayedJob: DisplayedJob = {
+    detail: '',
+    skillz: {
+      title: '',
+      descrip: '',
+    },
   };
 
-  ngOnInit(): void {
-      this.random.shuffleArray(this.currentJob.details.table);
+  ngOnChanges(changes: SimpleChanges): void {
+    this.random.shuffleArray(this.currentJob.details.table);
+    this.random.shuffleArray(this.currentJob.skillz);
+    this.rerollDetail();
+    this.rerollSkillz();
+  }
 
-      this.rerollDetail();
+  emitNewJob() {
+    this.newJobEmitter.emit(true);
   }
 
   rerollDetail() {
@@ -38,5 +46,18 @@ export class GrimmJobComponent implements OnInit {
     }
 
     this.displayedJob.detail = this.currentJob.details.table[newIndex];
+  }
+
+  rerollSkillz() {
+    let newIndex = this.currentJob.skillz.findIndex(skill => skill.title === this.displayedJob.skillz.title);
+    const isEndOfArray = newIndex + 1 === this.currentJob.skillz.length;
+
+    if (isEndOfArray) {
+      newIndex = 0;
+    } else {
+      newIndex += 1;
+    }
+
+    this.displayedJob.skillz = this.currentJob.skillz[newIndex];
   }
 }

@@ -1,7 +1,7 @@
 <div class="grimm-card-container">
     <div class="grimm-card">
         <div class="card-header">
-            <div class="clickable card-title">
+            <div (click)="emitNewJob()" class="clickable card-title">
                 {{currentJob.name}}
             </div>
         </div>
@@ -14,7 +14,11 @@
             </div>
             <div class="details">
                 <strong (click)="rerollDetail()" class="clickable info">{{ currentJob.details.title }}</strong>
-                <div>{{ displayedJob.detail }}</div>
+                <div [innerHTML]="displayedJob.detail"></div>
+            </div>
+            <div class="skillz">
+                <strong (click)="rerollSkillz()" class="clickable info">{{ displayedJob.skillz.title }}</strong>
+                <span [innerHTML]="displayedJob.skillz.descrip"></span>
             </div>
         </div>
     </div>

@@ -24,28 +24,6 @@
     src: local('Adder'), url(./app/assets/fonts/Adder.otf) format('opentype');
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-  
-/* Track */
-::-webkit-scrollbar-track {
-background: black;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-background: var(--grim-pink);
-border-radius: 5px;
-
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-background: var(--grim-cyan);
-}
-
 :root {
     --grim-pink: #ec008e;
     --grim-cyan: #01b8f2;
@@ -65,6 +43,7 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow: auto;
 }
 body {
     background-color: var(--dark-purple);
@@ -82,50 +61,47 @@ body {
 
 
 .grimm-card-container {
+    height: 100%;
     filter: 
-        drop-shadow(-5px 5px hsla(194, 99%, 48%, 0.313))
-}
+        drop-shadow(-5px 5px hsla(194, 99%, 48%, 0.313));
 
-.grimm-card {
-    position: relative;
-    background-color: var(--grim-cyan);
-    color: var(--off-white);
-    padding: 0.5rem;
-    clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    .card-header {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .card-title {
-        background-color: black;
+    .grimm-card {
+        position: relative;
+        height: 100%;
+        background-color: var(--grim-cyan);
         color: var(--off-white);
-        font-family: 'Audiowide';
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        padding: 0 1.5rem 0 0.5rem;
-        clip-path: polygon(calc(100% - 25px) 0, 100% 25px, 100% 100%, 0 100%, 0 0);
-        text-shadow: 1px 2px 0 var(--grim-cyan);
-        width: max-content;
-    }
-    .card-body {
-        background-color: var(--off-white);
-        color: black;
-        padding: 0.3rem 1rem 1rem 1rem;
+        padding: 0.5rem;
         clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        .card-header {
+            display: flex;
+            flex-direction: row;
+        }
+    
+        .card-title {
+            background-color: black;
+            color: var(--off-white);
+            font-family: 'Audiowide';
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            padding: 0 1.5rem 0 0.5rem;
+            clip-path: polygon(calc(100% - 25px) 0, 100% 25px, 100% 100%, 0 100%, 0 0);
+            text-shadow: 1px 2px 0 var(--grim-cyan);
+            width: max-content;
+        }
+        .card-body {
+            background-color: var(--off-white);
+            color: black;
+            padding: 0.3rem 1rem 1rem 1rem;
+            clip-path: polygon(0 0, 0 calc(100% - 25px), 25px 100%, 100% 100%, 100% 0%);
+        }
     }
 }
 
-.skew {
-    &-left {
-        transform: rotate(-0.5deg);
-    }
-    &-right {
-        transform: rotate(0.5deg);
-    }
+.underline {
+    text-decoration: underline;
 }
 
 .clickable {
@@ -241,9 +217,36 @@ body {
     }
 }
 
+@media only screen and (min-width: 1440px) {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--grim-pink);
+        border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--grim-cyan);
+    }
+}
+
 @media print {
     * {
         color: black !important;
+    }
+
+    footer {
+        border-color: black !important;
     }
 
     .toolbar {

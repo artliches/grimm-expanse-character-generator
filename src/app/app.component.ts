@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
       this.getNewJob();
   }
 
-  private getNewJob() {
+  getNewJob() {
     let newIndex = JOBS.findIndex(job => job.name === this.currentJob.name);
     const isEndOfArray = newIndex + 1 === JOBS.length;
 

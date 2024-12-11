@@ -7,9 +7,8 @@
             <div>Your name is lost to the frigid void of space, all anyone can remember is your callsign: "<span (click)="rerollName()" class="clickable info">{{identityObj.name | uppercase}}</span>".</div>
             <div>
                 Where you’ve been and what you've done is only a small dribble in the piss-pot of your life. 
-                The atrocities you've seen, however, have left you <span (click)="rerollPersonality('first')" class="clickable info">{{ identityObj.personalityObj.first | lowercase}}</span> and 
-                <span (click)="rerollPersonality('second')" class="clickable info">{{ identityObj.personalityObj.second | lowercase}}</span>, 
-                and with <span (click)="rerollScars()" class="clickable info">{{identityObj.scars | lowercase}}</span>.
+                The atrocities you've seen, however, have left you <span (click)="rerollPersonality('first')" class="clickable info">{{ identityObj.personalityObj.first | lowercase}}</span>, 
+                <span (click)="rerollPersonality('second')" class="clickable info">{{ identityObj.personalityObj.second | lowercase}}</span>, and with <span (click)="rerollScars()" class="clickable info">{{identityObj.scars | lowercase}}</span>.
             </div>
             <div>
                 The stress of barely scrapping past in the vast has instilled in you <span (click)="rerollIdiosyncrasies()" class="clickable info">{{ identityObj.idiosyncrasies }}</span>.

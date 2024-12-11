@@ -6,6 +6,12 @@
 
 .card-body {
     @include flex-column();
+    :nth-child(odd) {
+        transform: rotate(-0.5deg);
+    }
+    :nth-child(even) {
+        transform: rotate(0.5deg);
+    }
     .descrip {
         font-size: var(--small);
     }
@@ -14,5 +20,11 @@
         @include flex-column();
         border: 1px dotted black;
         padding: var(--smallest);
+    }
+
+    .skillz {
+        strong {
+            margin-right: var(--smallest);
+        }
     }
 }
