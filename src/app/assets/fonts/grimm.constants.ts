@@ -163,3 +163,93 @@ export const BOT_IDIOSYNCRASIES = [
     `trichotillomania. Whenever you rest, you pull wires out of your head`,
     `a sense of malase. You refuse to bathe or clean yourself in any way`,
 ];
+
+export const JOBS = [
+    //MAnchiNe
+    {
+        name: 'MAnchiNe',
+        descrip: `
+            You don’t truly belong anywhere except in battle with <strong>YOUR LEGION</strong>.
+            Enhanced for war, your body has melded with the <strong>sharp, cold machinery grafted to your flesh</strong> even if your mind has not.
+            Like all MAnchiNes, the sharp, ravaging steel claws of your grafted metal hand have <strong>saved your ass while in the trenches</strong>.
+        `,
+        details: {
+            title: 'EARLIEST MEMORIES',
+            table: [
+                `At war in the trenches of Proxima b, an explosion of mutilated bits of bodies flying over your head.`,
+                `Lying on a blood-drenched gurney, watching your arm get amputated and replaced with your glove.`,
+                `Playing as a child in a flower-covered field as The Grimm poured down from the sky like hail.`,
+                `Stowed away on a transport ship after your parents snuck you off a mining colony in the Belt of Despair.`,
+                `Foraging for insects outside the Mausoleum of THEY.`,
+                `Marching side-by-side with YOUR LEGION on the ice moon of 66 Pegasi c.`,
+            ]
+        },
+        skillz: [
+            `<strong>LIGHT HANDED.</strong> You ripped a mechanical arm off a medbot in the trenches of the war, affixing it to the flapping flesh where a landmine obliterated your arm into tiny chunks. Now ultraviolet light blasts from your robotic fingertips, sterilizing any festering rot that has been inflicted. Heals d6 damage and has a 40% chance of staving off parasitic infection from the damage taken. Recharges after a rest. If used in combat, 20% chance it gets damaged and no longer sterilizes.`,
+            `<strong>BOT EYES.</strong> Your eyes have been gouged out and licked clean. In their place, you have X-ray specs. You can see in utter darkness and have a 65% chance of viewing heat signatures through walls and structures.`,
+            `<strong>SHIP FOR BRAINS.</strong> Outfitted by YOUR LEGION, your internal hard drive has files on every possible spacefaring ship. It takes you d4 rounds to patch the software for any ship you have not flown, but after that, your Presence tests for piloting are DR −4.`,
+            `<strong>TASER FACE.</strong> Your face was horrifically mauled in battle. When you awoke on a stretcher, one of your eyes had been replaced and now sports a taser-shooting eyepatch. DR10, 2d4 damage, misfires on doubles. `,
+            `<strong>RUSTY PINCER.</strong> Your left arm was long ago upgraded to a cybernetic pincer hand, much like a lobster but not nearly as pretty. Your claw is rusty; it’s impossible to clean all the blood and visceral fluid from the aged pits in its metal surface. DR10 attack and defense while using it, d6 damage. 1-in-6 chance the claw will close completely on impact, causing an additional d4 of bone-breaking damage. Can be used as an additional melee action when using your default claw as the other action. When using both, defense tests are DR +4.`,
+            `<strong>CYBER KITTY.</strong> This feral tomcat has claimed you as its half human. What flesh remains intact on this beast is mangy and covered in neon fleas. `,
+        ],
+        extras: [
+            `<strong>CLAW ATTACK</strong>: DR10 to attack, d6 damage. 3-in-8 chance the enemy gets a free attack.`,
+            `
+                Your system can not download Tributes. If you try, you will uncontrollably speak gibberish for d6 minutes. If you begin with a Tribute, it will download to your system at a random time in the heat of battle. 
+            `
+        ],
+        stats: {
+            hp: 10,
+            strength: 2,
+            agility: -2,
+            presence: -2,
+            credits: '2d6x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 10,
+            armor: 4
+        }
+    },
+        //Soul Survivor
+        {
+            name: 'Soul Survivor',
+            descrip: `
+                Wherever you go, a <strong>dark cloud looms</strong> over your filthy, bug-infested head. 
+                You drag it along with you like a dead dog on a leash, <strong>darkening those you keep company with</strong>. 
+                But what can be done? The shadows are where you thrive. When all is bleak, you will profit or at least be the <strong>last to die</strong>.
+            `,
+            details: {
+                title: 'TRAUMATIC LONELINESS',
+                table: [
+                    `Watched your ship get devoured by The Grimm while you hid, cowering.`,
+                    `Abandoned on the Waste Barges of Khallar and forced to feed on the refuse of others.`,
+                    `Cryogenically frozen only to awaken hungry and alone in the Bitter Void.`,
+                    `Escaped an isolation tank on a prison moon after its inhabitants were annihilated.`,
+                    `You lived for five years as a stowaway on a raider’s ship. They never found you.`,
+                    `Tormented and bullied by the denizens of your settlement. Weren’t they surprised when you let the Grimm in...`,
+                ]
+            },
+            skillz: [
+                `<strong>ENERGY VAMPIRE.</strong> Pain and misery fuel you as you feed on the emotional energy of others. When a member of YOUR LEGION is killed, gain 1 additional Favor. If more than half of YOUR LEGION witnesses it and it is exceptionally brutal, gain 2.`,
+                `<strong>LOW EXPECTATIONS.</strong> No one expects much of you. Most assume you will slink back into a corner if threatened. Your first attack is always a surprise at DR10. Succeed by 5 or more and double your damage.  `,
+                `<strong>LAST TO DIE.</strong> You are weak and puny. Everyone looks at you and sees zer0 threat and even chuckles at the idea of your mere existence. When fighting alongside YOUR LEGION, you’re always last to be attacked if you’re even worth their time.  `,
+                `<strong>GET ANYWHERE/ANYTHING.</strong> You’ve managed to find your way in and out of everywhere you’ve been, often by picking locks and pockets. You can do both with an Agility DR8 test. You have an antique set of lockpicks and a decrypted keycard. `,
+                `<strong>INEVITABLE ESCAPE.</strong> You, better than anyone else, know how to find places out of harm’s way. When hiding during combat, it takes a Presence DR14 test to notice you.`,
+                `<strong>SHRUNKEN STOMACH.</strong> Having spent much of your life with little or no food, your stomach has adjusted to being malnourished. Without even the slightest sustenance, you can restore d4 HP for three days. On the seventh day, you begin to slowly starve, losing d2 HP per day.`,
+            ],
+            extras: [
+                `<strong>COCKROACH:</strong> All Presence and Toughness tests are DR −2.`,
+            ],
+            stats: {
+                hp: 6,
+                strength: -2,
+                credits: '1d6x10',
+                favors: 2
+            },
+            gear: {
+                weapons: 6,
+                armor: 2
+            }
+        },
+];

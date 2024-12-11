@@ -3,7 +3,7 @@
     border-bottom: 2px solid var(--yellow);
     width: 100%;
     .clickable {
-        font-size: 0.8rem;
+        font-size: var(--small);
         width: max-content;
         font-weight: bold;
         font-family: 'Adder';

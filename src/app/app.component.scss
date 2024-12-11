@@ -60,7 +60,10 @@ header {
                     grid-area: 1 / span 2;
                 }
                 .identity {
-                    grid-area: 2 / span 2;
+                    grid-area: 2 / 1;
+                }
+                .job {
+                    grid-area: 2 / 2;
                 }
             }
         }

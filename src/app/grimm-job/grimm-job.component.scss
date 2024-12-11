@@ -1,0 +1,18 @@
+@mixin flex-column($gap: var(--smaller)) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+.card-body {
+    @include flex-column();
+    .descrip {
+        font-size: var(--small);
+    }
+    
+    .extras {
+        @include flex-column();
+        border: 1px dotted black;
+        padding: var(--smallest);
+    }
+}

@@ -1,0 +1,21 @@
+<div class="grimm-card-container">
+    <div class="grimm-card">
+        <div class="card-header">
+            <div class="clickable card-title">
+                {{currentJob.name}}
+            </div>
+        </div>
+        <div class="card-body">
+            <em class="descrip"><span [innerHTML]="currentJob.descrip"></span></em>
+            <div class="extras">
+                @for (extra of currentJob.extras; track $index) {
+                    <span [innerHTML]="extra"></span>
+                }
+            </div>
+            <div class="details">
+                <strong (click)="rerollDetail()" class="clickable info">{{ currentJob.details.title }}</strong>
+                <div>{{ displayedJob.detail }}</div>
+            </div>
+        </div>
+    </div>
+</div>
