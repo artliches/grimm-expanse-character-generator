@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1733943352138,
+  "timestamp": 1733959691072,
   "index": "/vast-grimm-character-generator/index.html",
   "assetGroups": [
     {
@@ -13,10 +13,10 @@
       "urls": [
         "/vast-grimm-character-generator/favicon.ico",
         "/vast-grimm-character-generator/index.html",
-        "/vast-grimm-character-generator/main-37CBJLGH.js",
+        "/vast-grimm-character-generator/main-SSJGOGOD.js",
         "/vast-grimm-character-generator/manifest.webmanifest",
         "/vast-grimm-character-generator/polyfills-FFHMD2TL.js",
-        "/vast-grimm-character-generator/styles-OVR3RQLQ.css"
+        "/vast-grimm-character-generator/styles-E5F6HPRJ.css"
       ],
       "patterns": []
     },
@@ -50,8 +50,8 @@
     "/vast-grimm-character-generator/icons/apple-touch-icon.png": "6a58fa7a6ee38d4f94765024df470187558d6e16",
     "/vast-grimm-character-generator/icons/favicon-16x16.png": "1fc25c3e12a97e71a179939678dc3386d431a61a",
     "/vast-grimm-character-generator/icons/favicon-32x32.png": "b5e5d9a993f344ed48c1263f147289c1f98a93b0",
-    "/vast-grimm-character-generator/index.html": "241fdabaf0b26147156aa910eb2d0d3fe7f0c797",
-    "/vast-grimm-character-generator/main-37CBJLGH.js": "d216d00de5d2fb9a4d2bda908dd837b06ab33198",
+    "/vast-grimm-character-generator/index.html": "52c132f3df2cc7b97eaec9ac5eae32375dc04e73",
+    "/vast-grimm-character-generator/main-SSJGOGOD.js": "eee5f452d1ac9b02eff44470ef75ca3347133aa8",
     "/vast-grimm-character-generator/manifest.webmanifest": "7087fc0b844869af503579fe67ffdb9c574e9c44",
     "/vast-grimm-character-generator/media/Adder-5HCF564L.otf": "611bb3e58129dc95bbf91f1b1de84cd1195d781b",
     "/vast-grimm-character-generator/media/Audiowide-Regular-XWRBRHAX.ttf": "651503b7a0a89f49f78f14d04c62f811853573cd",
@@ -59,7 +59,7 @@
     "/vast-grimm-character-generator/media/RobotoMono-W4DSDWKB.ttf": "db68e7694003b4a0f58c675b4131a8226a566f5c",
     "/vast-grimm-character-generator/media/RubikGlitch-Regular-OMNIQNHL.ttf": "62017fd6822d52043255bff0ea7232ebefddc049",
     "/vast-grimm-character-generator/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
-    "/vast-grimm-character-generator/styles-OVR3RQLQ.css": "8093b783db50bd7b4ce1b8b9a3eaebda9d93de2d"
+    "/vast-grimm-character-generator/styles-E5F6HPRJ.css": "504517bb7f0d18ea9584e9b4eb7241731a00dd0d"
   },
   "navigationUrls": [
     {
