@@ -16,20 +16,27 @@ export interface Job {
         title: string,
         table: string[],
     },
-    skillz: {title: string, descrip: string}[],
+    skillz?: {title: string, descrip: string}[],
+    skillzTable?: {
+        title: string,
+        descrip: string,
+        table: {title: string, descrip: string}[]
+    },
     extras: string[],
     stats: {
         hp: number,
         strength?: number,
         agility?: number,
         presence?: number,
+        tech?: number,
         credits: string,
         favors: number,
     },
     gear: {
         weapons: number,
         armor: number,
-    }
+    },
+    isBot: boolean,
 };
 
 export interface DisplayedJob {

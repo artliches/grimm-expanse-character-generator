@@ -23,12 +23,27 @@ export class GrimmJobComponent implements OnChanges {
       descrip: '',
     },
   };
+  wurms: string[] = [
+    'Carnitious',
+    'The Cruor',
+    'Neuroc',
+    'Ramethus',
+    'The Rot',
+    'Tergus'
+  ];
 
   ngOnChanges(changes: SimpleChanges): void {
     this.random.shuffleArray(this.currentJob.details.table);
-    this.random.shuffleArray(this.currentJob.skillz);
+    if (this.currentJob.skillz) {
+      this.random.shuffleArray(this.currentJob.skillz);
+      this.rerollSkillz();
+    } else {
+      this.displayedJob.skillz = {
+        title :'',
+        descrip: ''
+      };
+    }
     this.rerollDetail();
-    this.rerollSkillz();
   }
 
   emitNewJob() {
@@ -49,15 +64,21 @@ export class GrimmJobComponent implements OnChanges {
   }
 
   rerollSkillz() {
-    let newIndex = this.currentJob.skillz.findIndex(skill => skill.title === this.displayedJob.skillz.title);
-    const isEndOfArray = newIndex + 1 === this.currentJob.skillz.length;
+    if (this.currentJob.skillz) {
+      let newIndex = this.currentJob?.skillz.findIndex(skill => skill.title === this.displayedJob.skillz.title);
+      const isEndOfArray = newIndex + 1 === this.currentJob?.skillz.length;
+  
+      if (isEndOfArray) {
+        newIndex = 0;
+      } else {
+        newIndex += 1;
+      }
+  
+      this.displayedJob.skillz = this.currentJob?.skillz[newIndex];
 
-    if (isEndOfArray) {
-      newIndex = 0;
-    } else {
-      newIndex += 1;
+      if (this.displayedJob.skillz.descrip.includes('[type]')) {
+        this.displayedJob.skillz.descrip = this.displayedJob.skillz.descrip.replace('[type]', this.wurms[this.random.getRandomNumber(0, this.wurms.length - 1)]);
+      }
     }
-
-    this.displayedJob.skillz = this.currentJob.skillz[newIndex];
   }
 }

@@ -16,10 +16,26 @@
                 <strong (click)="rerollDetail()" class="clickable info">{{ currentJob.details.title }}</strong>
                 <div [innerHTML]="displayedJob.detail"></div>
             </div>
-            <div class="skillz">
-                <strong (click)="rerollSkillz()" class="clickable info">{{ displayedJob.skillz.title }}</strong>
-                <span [innerHTML]="displayedJob.skillz.descrip"></span>
-            </div>
+            @if (displayedJob.skillz.title && displayedJob.skillz.descrip) {
+                <div class="skillz">
+                    <strong (click)="rerollSkillz()" class="clickable info">{{ displayedJob.skillz.title }}</strong>
+                    <span [innerHTML]="displayedJob.skillz.descrip"></span>
+                </div>
+            }
+            @if (currentJob.skillzTable) {
+                <div class="skillz-table">
+                    <strong class="underline">{{ currentJob.skillzTable.title }}</strong>
+                    <em><span [innerHTML]="currentJob.skillzTable.descrip"></span></em>
+                    <ol>
+                        @for (data of currentJob.skillzTable.table; track $index) {
+                            <li>
+                                <strong>{{ data.title }}.</strong>
+                                <span [innerHTML]="data.descrip"></span>
+                            </li>
+                        }
+                    </ol>
+                </div>
+            }
         </div>
     </div>
 </div>

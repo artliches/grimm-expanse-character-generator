@@ -58,8 +58,6 @@ body {
     animation: move-background 120s infinite linear;
 }
 
-
-
 .grimm-card-container {
     height: 100%;
     filter: 
@@ -84,7 +82,7 @@ body {
             background-color: black;
             color: var(--off-white);
             font-family: 'Audiowide';
-            text-transform: uppercase;
+            
             font-size: 1.3rem;
             padding: 0 1.5rem 0 0.5rem;
             clip-path: polygon(calc(100% - 25px) 0, 100% 25px, 100% 100%, 0 100%, 0 0);
@@ -172,6 +170,16 @@ body {
         align-items: center;
         min-width: 100%;
         animation: scrolling-text 180s linear infinite;
+    }
+}
+
+.wurm-card {
+    border: 1px dotted black;
+    padding: var(--smaller);
+    .wurm-stats {
+        padding-left: var(--small);
+        display: flex;
+        flex-direction: column;
     }
 }
 

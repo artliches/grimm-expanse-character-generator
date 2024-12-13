@@ -27,4 +27,32 @@
             margin-right: var(--smallest);
         }
     }
+
+    .skillz-table {
+        @include flex-column(0rem);
+        border: 1px dotted black;
+        padding: var(--smallest);
+        padding-top: 0rem;
+        strong.underline {
+            margin-bottom: var(--smaller);
+        }
+        em {
+            font-size: var(--small);
+        }
+        ol {
+            margin: 0;
+            padding: 0 var(--small);
+
+            columns: 2;
+            list-style-position: inside;
+            font-size: var(--small);
+            li {
+                margin-bottom: var(--smaller);
+                strong {
+                    text-decoration: underline;
+                    margin-right: var(--smallest);
+                }
+            }
+        }
+    }
 }
