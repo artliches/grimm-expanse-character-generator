@@ -86,11 +86,14 @@ footer {
                 .toolbar {
                     grid-area: 1 / span 2;
                 }
+                .abilities {
+                    grid-area: 2 / span 2;
+                }
                 .identity {
-                    grid-area: 2 / 1;
+                    grid-area: 3 / 1;
                 }
                 .job {
-                    grid-area: 2 / 2;
+                    grid-area: 3 / 2;
                 }
                 :nth-child(n + 2) {
                     margin: 0 0 1.3rem 0;

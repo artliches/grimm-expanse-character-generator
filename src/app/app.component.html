@@ -10,6 +10,11 @@
         class="toolbar"
         (printEmitter)="print()"
       ></app-toolbar>
+      <app-grimm-abilities
+        class="abilities"
+        [currentJob]="currentJob"
+      >
+      </app-grimm-abilities>
       <app-grimm-identity class="identity"></app-grimm-identity>
       <app-grimm-job
         class="job"
@@ -25,6 +30,6 @@
     </div>
     <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
     <div>Web app by codeLiches</div>
-    <div>v0.2: Crew onboard</div>
+    <div>v0.3: Roll 3d6 and eat dirt</div>
   </footer>
 </span>

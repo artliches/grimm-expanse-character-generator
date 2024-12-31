@@ -46,3 +46,11 @@ export interface DisplayedJob {
       descrip: string,
     }
 };
+
+export interface AbilityObj {
+    name: string,
+    descrip: string,
+    value: number,
+    rolledDice: number[],
+    modifier: number,
+};

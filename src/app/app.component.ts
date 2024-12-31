@@ -5,10 +5,11 @@ import { RandomNumberService } from './services/random-number.service';
 import { Job } from './models/grimm-interfaces';
 import { JOBS } from './assets/fonts/grimm.constants';
 import { GrimmJobComponent } from "./grimm-job/grimm-job.component";
+import { GrimmAbilitiesComponent } from "./grimm-abilities/grimm-abilities.component";
 
 @Component({
   selector: 'app-root',
-  imports: [GrimmIdentityComponent, ToolbarComponent, GrimmJobComponent],
+  imports: [GrimmIdentityComponent, ToolbarComponent, GrimmJobComponent, GrimmAbilitiesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

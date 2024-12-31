@@ -1,0 +1,59 @@
+<div class="grimm-card-container">
+    <div class="grimm-card">
+        <div class="card-header">
+            <div (click)="rerollAll()" class="clickable card-title">ABILITIES</div>
+            <span (click)="showRolledStats = !showRolledStats" class="clickable card-header-button">{{showRolledStats ? 'HIDE' : 'SHOW'}} ROLLS</span>
+        </div>
+        <div class="card-body">
+            <div class="abilities-layout">
+                @for (ability of abilitiesObj; track $index) {
+                    <div class="ability-layout">
+                        <strong (click)="rerollAbility(ability.name)" class="clickable info">{{ability.name | uppercase}}</strong>
+                        <span class="descrip">{{ability.descrip}}</span>
+                        <strong class="ability-value">
+                            @if (ability.value === 0) {
+                                &pm;
+                            }
+                            {{ability.value}}
+                        </strong>
+                        @if (showRolledStats) {
+                            <em class="rolled-dice">
+                                [{{ability.rolledDice}}]
+                                @if (ability.modifier !== 0) {
+                                    @if (ability.modifier > 0) {
+                                        +
+                                    }
+                                    {{ability.modifier}}
+                                }
+                            </em>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="abilities-layout">
+                @for (stat of statsObj; track $index) {
+                    <div class="ability-layout">
+                        <strong (click)="routeStatReroll(stat.name)" class="clickable info">{{stat.name | uppercase}}</strong>
+                        <span [innerHTML]="stat.descrip" class="descrip"></span>
+                        <strong class="ability-value">
+                            {{stat.value}}
+                        </strong>
+                        @if (showRolledStats && stat.name !== 'favors') {
+                            <em class="rolled-dice">
+                                [
+                                {{stat.rolledValue}}
+                                @if (stat.name === 'hp') {
+                                    @if (stat.modifier >= 0) {
+                                        +
+                                    }
+                                    {{stat.modifier}}
+                                }
+                                ]
+                            </em>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
