@@ -1,0 +1,50 @@
+<div class="grimm-card-container">
+    <div class="grimm-card">
+        <div class="card-header">
+            <div (click)="rerollAll()" class="clickable card-title">EQUIPMENT</div>
+        </div>
+        <div class="card-body">
+            <div class="starting-gear-section">
+                <strong class="section-title">
+                    STARTING GEAR
+                </strong>
+                <ul>
+                    @for (starting of equipmentObj.starting; track $index) {
+                        <li>
+                            <span (click)="rerollStartingEquipment($index)" [innerHTML]="starting"></span>
+                        </li>
+                    }
+                </ul>
+            </div>
+            @if (equipmentObj.weapon) {
+                <div class="weapon-section">
+                    <strong class="section-title">WEAPON</strong>
+                    <span (click)="rerollWeapon()" [innerHTML]="equipmentObj.weapon"></span>
+                </div>
+            }
+
+            @if (equipmentObj.armor) {
+                <div class="armor-section">
+                    <strong class="section-title">ARMOR</strong>
+                    <span (click)="rerollArmor()" [innerHTML]="equipmentObj.armor"></span>
+                </div>
+            }
+
+            @if (equipmentObj.tributesArray.length > 0) {
+                <div class="tributes-section">
+                    <strong (click)="rerollAllTributes()" class="tributes-title clickable info">TRIBUTES</strong>
+                    @for (tribute of equipmentObj.tributesArray; track $index) {
+                        <div class="tribute">
+                            <em class="tribute-type">{{tribute.type}}</em>
+                            <span class="tribute-info">
+                                <strong (click)="getTributes(tribute.type, tribute.index, true)" class="clickable info">{{tribute.name}}</strong>
+                                <span [innerHTML]="tribute.descrip"></span>
+                                <!-- <div>{{tribute.index}}</div> -->
+                            </span>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

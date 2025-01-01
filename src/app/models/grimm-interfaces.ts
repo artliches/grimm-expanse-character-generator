@@ -35,6 +35,11 @@ export interface Job {
     gear: {
         weapons: number,
         armor: number,
+        tributesObj?: {
+            type: string,
+            amount: number,
+        }[],
+        wurms?: number,
     },
     isBot: boolean,
 };
@@ -53,4 +58,18 @@ export interface AbilityObj {
     value: number,
     rolledDice: number[],
     modifier: number,
+};
+
+export interface TributesObj {
+    name: string,
+    descrip: string,
+    type: string,
+    index: number,
+};
+
+export interface EquipmentObj {
+    starting: string[],
+    weapon: string,
+    armor: string,
+    tributesArray: TributesObj[];
 };

@@ -392,7 +392,17 @@ export const JOBS = [
         },
         gear: {
             weapons: 4,
-            armor: 2
+            armor: 2,
+            tributesObj: [
+                {
+                    type: 'Hacked',
+                    amount: 1,
+                },
+                {
+                    type: 'Encrypted',
+                    amount: 1,
+                }
+            ],
         },
         isBot: false,
     },
@@ -603,7 +613,13 @@ export const JOBS = [
         },
         gear: {
             weapons: 4,
-            armor: 0
+            armor: 0,
+            tributesObj: [
+                {
+                    type: 'Encrypted',
+                    amount: 1
+                }
+            ],
         },
         isBot: true,
     },
@@ -653,7 +669,8 @@ export const JOBS = [
         },
         gear: {
             weapons: 4,
-            armor: 2
+            armor: 2,
+            wurms: 2,
         },
         isBot: false,
     },
@@ -693,7 +710,7 @@ export const JOBS = [
                     <div>One of the würms you harvested took a liking to you and is a loyal pet. It is the size of a plump chihuahua.</div>
                     <p>
                         <div class="wurm-card">
-                            <strong class="underline">[type]</strong>
+                            <strong class="underline clickable">[type]</strong>
                             <div class="wurm-stats">
                                 <span>Attacks with <strong>DR12</strong> (<em>bite d6</em>)</span>
                                 <span>GP 2-in-6 for each successful attack.</span>
@@ -724,8 +741,158 @@ export const JOBS = [
         },
         gear: {
             weapons: 4,
-            armor: 2
+            armor: 2,
+            tributesObj: [{
+                type: 'random',
+                amount: 1,
+            }],
+            wurms: 1,
         },
         isBot: false,
     },
+];
+
+export const STARTING_EQUIPMENT = [
+    [
+        `<strong class="clickable info">Lint ball</strong> that smells of the elderly.`,
+        `<strong class="clickable info">Coin</strong> from a now-fallen society.`,
+        `<strong class="clickable info">Fanny pack</strong> — holds <strong>3</strong> small-sized items.`,
+        `<strong class="clickable info">Space pack</strong> — holds <strong>6</strong> normal-sized items.`,
+        `<strong class="clickable info">Rolling footlocker</strong> — holds <strong>12</strong> normal-sized items. `,
+        `<strong class="clickable info">Hoverplate</strong> — will carry <strong>18</strong> normal-sized items. (Sometimes wanders off.) `,
+    ],
+    [
+        `<strong class="clickable info">Laser torch</strong>. 4 charges/use. Cuts through 3′ of 5″-thick metal/use, DR12. `,
+        `<strong class="clickable info">Headlamp</strong>. 1 charge/use.`,
+        `<strong class="clickable info">Glass cutter</strong>. Cuts through glass and plexiglass no thicker than 1/4″, DR10.`,
+        `25′ <strong class="clickable info">synthrope</strong>.`,
+        `<strong class="clickable info">Med kit</strong>. Tech+d6 uses, stops bleeding, heals d4 HP.`,
+        `<strong class="clickable info">Keycard descrambler</strong>. DR −4 when hacking locked hatches. `,
+        `<strong class="clickable info">Mini–BOOM box</strong>. Small device that looks like a radio, can be timed to detonate, d12 damage.`,
+        `<strong class="clickable info">Hacked Tribute</strong> - see below`,
+        `<strong class="clickable info">Pocket multitool</strong> with fancy tooled-leather case.`,
+        `<strong class="clickable info">Mummified würm</strong> strung up on a necklace.`,
+        `<strong class="clickable info">Encrypted Tribute</strong> - see below`,
+        `<strong class="clickable info">Lysergic poison</strong>. d4 doses. Causes hallucinations for d8 hours.`,
+    ],
+    [
+        `<strong class="clickable info">Postcard collection</strong> of vacation planets, none of which you’ve visited and most of which no longer exist.`,
+        `Crate of <strong class="clickable info">freeze-dried rations</strong>, 22 days’ worth.`,
+        `<strong class="clickable info">Laser knife</strong>. 3 charges/use, d4 damage.`,
+        `<strong class="clickable info">Fresh strawberries</strong> worth 50 credits, will rot in d6 days.`,
+        `<strong class="clickable info">Encrypted Tribute</strong> - see below`,
+        `Glow-in-the-dark <strong class="clickable info">hammer</strong>.`,
+        `<strong class="clickable info">Bot-destabilizing fluid</strong>. d2 doses, effective on mechanical creations, DR14, d12 damage.`,
+        `<strong class="clickable info">Violent ’Roid Rat</strong>. Only listens to your whistle. Consumes a day’s rations. HP d4+4, Bite d4.`,
+        `<strong class="clickable info">Flare gun</strong> with 2 flares. One white, one blue.`,
+        `Well-used <strong class="clickable info">tambourine</strong>.`,
+        `<strong class="clickable info">Electroshield</strong>. Works as a battery to charge other items. Absorb 1 damage from an energy attack. Holds 10 charges, each damage = 2 charges.`,
+        `<strong class="clickable info">Folded-up picture</strong> of one of YOUR LEGION’s siblings.`,
+    ],
+];
+
+export const WEAPONS = [
+    `<strong class="clickable info">Bouncer’s Club</strong>, wooden (<strong>d4</strong>) <em>1CR</em>`,
+    `<strong class="clickable info">Ratchet Wrench</strong> (<strong>d4</strong>) <em>2CR</em>`,
+    `<strong class="clickable info">Military Dagger</strong> with sheath (<strong>d4</strong>) <em>3CR</em>`,
+    `<strong class="clickable info">Sharp Throwing Bones</strong> (<strong>d4</strong>, with Presence + 10 bones/stars) <em>4CR</em>`,
+    `<strong class="clickable info">Gummi Stick / Rubber Legionnaire Baton</strong> (<strong>d6</strong>, breaks a bone on Crit) <em>7CR</em>`,
+    `<strong class="clickable info">Double-Sided Bang Stick / Shotgun</strong> (<strong>d8</strong> in the front; dagger, <strong>d4</strong>, in the back) Holds 1 shell, must reload. Starts with 10 shells, uncommon ammo. <em>10CR</em> (2 shells/1CR)`,
+    `<strong class="clickable info">Blaster</strong> (<strong>d6</strong>, 4 charges/use) <em>15CR</em>`,
+    `<strong class="clickable info">Semiautomatic Pistol</strong> (<strong>d6+2</strong> per bullet) Fires two bullets at a single target per round. Start with 18 rounds, ammo is hard to come by. <em>30CR</em> (2 rounds/1CR)`,
+    `<strong class="clickable info">Pulse Rifle</strong> (<strong>d8</strong>, 6 charges/use)  <em>20CR</em>`,
+    `<strong class="clickable info">Energy Sword</strong> (<strong>d10</strong>, 4 charges/strike) <em>22CR</em>`,
+];
+
+export const ARMORS = [
+    `<strong class="clickable info">TIER 0</strong> No armor`,
+    `<strong class="clickable info">TIER 1</strong> <span class="underline">Leather Jacket / Thin-Grade Carbon Fiber</span> (<strong>−d2 damage</strong>) <em>5CR</em>`,
+    `<strong class="clickable info">TIER 2</strong> <span class="underline">Police-Grade Carbon-Fiber Body Armor</span> with sewn-in carbon-fiber guards (<strong>−d4 damage</strong>, DR +2 on Agility and Defense tests) <em>42CR</em>`,
+    `<strong class="clickable info">TIER 3</strong> <span class="underline">Military-Grade Mecha-Enhanced Armored Suit</span> (<strong>−d6 damage</strong>, DR +4 on Agility tests, +2 on Defense tests) <em>80CR</em>`,
+];
+
+export const HACKED_TRIBUTES = [
+    {
+        name: 'ELECTROMAGNETIC DETONATOR',
+        descrip: '<strong>d8</strong> damage to any functioning electrical equipment in a 30′ radius.'
+    },
+    {
+        name: 'FATUMA’S REVENGE',
+        descrip: 'One creature continually changes its shape to match others in the vicinity for <strong>d10</strong> rounds.'
+    },
+    {
+        name: 'YOU’VE BEEN SPACED',
+        descrip: 'One random creature within 30′ of the Tribute has the air around it sucked away for <strong>d6</strong> rounds, losing <strong>d4</strong> HP each round.'
+    },
+    {
+        name: 'SIGNAL BOOST',
+        descrip: 'Causes all other Tributes within an astrosec to light up like beacons for <strong>d4</strong> days.'
+    },
+    {
+        name: 'DORMANT NO MORE',
+        descrip: 'Any of <strong>The Grimm</strong> currently dormant within a 100′ radius will activate when this Tribute is used.'
+    },
+    {
+        name: 'ETERNAL DARKNESS',
+        descrip: 'All creatures within 45′ lose <strong>3d6</strong> HP.'
+    },
+    {
+        name: 'SHOCK THERAPY',
+        descrip: '<strong>d4</strong> electrical bolts deal <strong>d4</strong> damage each.'
+    },
+    {
+        name: 'BOOSTER PACK',
+        descrip: 'One electronic weapon deals <strong>d4</strong> additional damage for <strong>d2</strong> rounds.'
+    },
+    {
+        name: 'GRIMM GROUPIE',
+        descrip: 'Summons <strong>d4</strong> Grimm.'
+    },
+    {
+        name: 'ZER0 GRAVITY',
+        descrip: 'When activated in a room no larger than 1,000 square feet, gravity ceases to function for <strong>d10</strong> rounds.'
+    },
+];
+
+export const ENCRYPTED_TRIBUTES = [
+{
+    name: 'PRAISE THE NANOTECH',
+    descrip: 'Restore <strong>d12</strong> HP to one character of your choice.'
+},
+{
+    name: 'DEWÜRMED',
+    descrip: 'Expel the <strong>würm</strong> from an infected creature of your choice.'
+},
+{
+    name: 'HIVE-MIND SPEAK',
+    descrip: 'For three rounds, a <strong>Grimm</strong> will truthfully answer questions before the würm inside of them explodes.'
+},
+{
+    name: 'STRENGTH OF 1,000 WÜRMS',
+    descrip: 'A creature of your choice increases their <strong>Strength</strong> by 2 until they sleep it off.'
+},
+{
+    name: 'ROTTED BREATH',
+    descrip: 'One creature deceased for no more than three days is brought back to life. The creature’s <strong>Presence</strong> is reduced by 2 (maximum −3).'
+},
+{
+    name: 'GRIMM REAPER',
+    descrip: 'All of <strong>The Grimm</strong> within earshot will follow your commands for <strong>d6</strong> rounds.'
+},
+{
+    name: 'INFINITE BLACK',
+    descrip: 'Extinguish light, natural or artificial, in a 60′ radius for <strong>d8</strong> rounds. The darkness follows your Tribute.'
+},
+{
+    name: 'CALMING CREATURE',
+    descrip: '<strong>d6</strong> creatures reduce <strong>Morale</strong> by 4 when this Tribute is activated.'
+},
+{
+    name: 'ELECTRIC AXE',
+    descrip: 'A massive axe made of laser light (<strong>d12 damage</strong>) extrudes from your arm for <strong>2d6</strong> rounds. Variations include Electric Morningstar, Cleaver, Hammer, or Claw.'
+},
+{
+    name: 'BEAMED UP',
+    descrip: '<strong>d2</strong> creatures dematerialize and teleport to one of <strong>d8</strong> <span class="underline">Random Locations</span>.'
+},
 ];

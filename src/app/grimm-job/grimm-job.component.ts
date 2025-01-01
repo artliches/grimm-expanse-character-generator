@@ -32,6 +32,8 @@ export class GrimmJobComponent implements OnChanges {
     'Tergus'
   ];
 
+  currentWurm: string = '';
+
   ngOnChanges(changes: SimpleChanges): void {
     this.random.shuffleArray(this.currentJob.details.table);
     if (this.currentJob.skillz) {
@@ -77,8 +79,24 @@ export class GrimmJobComponent implements OnChanges {
       this.displayedJob.skillz = this.currentJob?.skillz[newIndex];
 
       if (this.displayedJob.skillz.descrip.includes('[type]')) {
-        this.displayedJob.skillz.descrip = this.displayedJob.skillz.descrip.replace('[type]', this.wurms[this.random.getRandomNumber(0, this.wurms.length - 1)]);
+        this.random.shuffleArray(this.wurms);
+        const chosenWurmIndex = this.random.getRandomNumber(0, this.wurms.length - 1);
+        this.currentWurm = this.wurms[chosenWurmIndex];
+        this.displayedJob.skillz.descrip = this.displayedJob.skillz.descrip.replace('[type]', this.currentWurm);
       }
     }
+  }
+
+  rerollWurm() {
+    let newIndex = this.wurms.indexOf(this.currentWurm);
+    const oldWurm = this.currentWurm;
+
+    if (newIndex + 1 === this.wurms.length) {
+      newIndex = -1;
+    }
+    newIndex ++;
+
+    this.currentWurm = this.wurms[newIndex];
+    this.displayedJob.skillz.descrip = this.displayedJob.skillz.descrip.replace(oldWurm, this.currentWurm);
   }
 }

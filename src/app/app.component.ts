@@ -6,10 +6,11 @@ import { Job } from './models/grimm-interfaces';
 import { JOBS } from './assets/fonts/grimm.constants';
 import { GrimmJobComponent } from "./grimm-job/grimm-job.component";
 import { GrimmAbilitiesComponent } from "./grimm-abilities/grimm-abilities.component";
+import { GrimmEquipmentComponent } from "./grimm-equipment/grimm-equipment.component";
 
 @Component({
   selector: 'app-root',
-  imports: [GrimmIdentityComponent, ToolbarComponent, GrimmJobComponent, GrimmAbilitiesComponent],
+  imports: [GrimmIdentityComponent, ToolbarComponent, GrimmJobComponent, GrimmAbilitiesComponent, GrimmEquipmentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

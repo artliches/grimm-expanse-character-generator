@@ -19,7 +19,11 @@
             @if (displayedJob.skillz.title && displayedJob.skillz.descrip) {
                 <div class="skillz">
                     <strong (click)="rerollSkillz()" class="clickable info">{{ displayedJob.skillz.title }}</strong>
-                    <span [innerHTML]="displayedJob.skillz.descrip"></span>
+                    @if (currentJob.name === 'The Harvester') {
+                        <span (click)="rerollWurm()" [innerHTML]="displayedJob.skillz.descrip"></span>
+                    } @else {
+                        <span [innerHTML]="displayedJob.skillz.descrip"></span>
+                    }
                 </div>
             }
             @if (currentJob.skillzTable) {

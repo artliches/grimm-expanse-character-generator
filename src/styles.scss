@@ -184,7 +184,9 @@ body {
 }
 
 .wurm-card {
-    border: 1px dotted black;
+    border: 3px solid var(--grim-pink);
+    background-color: black;
+    color: white;
     padding: var(--smaller);
     .wurm-stats {
         padding-left: var(--small);
