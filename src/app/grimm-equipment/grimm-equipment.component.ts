@@ -15,6 +15,11 @@ export class GrimmEquipmentComponent implements OnChanges {
   ) {}
 
   @Input() currentJob: Job = {} as Job;
+  skipSecondEquipment: string[] = [
+    'The Lost Technomaniac',
+    'The Devout',
+    'The Harvester',
+  ];
   equipmentObj: EquipmentObj = {
     starting: [],
     weapon: '',
@@ -42,10 +47,12 @@ export class GrimmEquipmentComponent implements OnChanges {
     this.equipmentObj.wurmsArray = [];
 
     this.equipmentObj.starting.push(STARTING_EQUIPMENT[0][0]);
-    if (this.currentJob.name !== 'The Lost Technomaniac') {
+    if (!this.skipSecondEquipment.includes(this.currentJob.name)) {
       this.equipmentObj.starting.push(STARTING_EQUIPMENT[1][0]);
     }
-    this.equipmentObj.starting.push(STARTING_EQUIPMENT[2][0]);
+    if (this.currentJob.name !== 'The Harvester') {
+      this.equipmentObj.starting.push(STARTING_EQUIPMENT[2][0]);
+    }
     this.equipmentObj.weapon = this.trimmedWeaponTable[0];
     this.equipmentObj.armor = this.trimmedArmorTable[0];
 
