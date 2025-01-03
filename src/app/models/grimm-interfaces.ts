@@ -72,4 +72,5 @@ export interface EquipmentObj {
     weapon: string,
     armor: string,
     tributesArray: TributesObj[];
+    wurmsArray: string[];
 };

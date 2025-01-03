@@ -33,8 +33,29 @@ ul {
     @include flex-column(0.1rem);
 }
 
+.wurm-card {
+    padding-top: 0;
+    padding-left: 0;
+    .wurms-title {
+        border: 3px solid var(--grim-pink);
+        border-left: none;
+        background-color: var(--grim-pink);
+        &:hover {
+            background-color: var(--yellow);
+            color: black;
+        }
+    }
+    ul {
+        padding-top: var(--smaller);
+        margin-left: var(--small);
+    }
+}
+
 .tributes-section {
     border: 1px dotted black;
+    .tribute-title-details {
+        font-size: var(--small);
+    }
     .tribute {
         padding: var(--smallest);
         @include flex-column;

@@ -33,16 +33,31 @@
             @if (equipmentObj.tributesArray.length > 0) {
                 <div class="tributes-section">
                     <strong (click)="rerollAllTributes()" class="tributes-title clickable info">TRIBUTES</strong>
+                    <span class="tribute-title-details">
+                        Spend a <strong>NP</strong> to use the Tribute (<strong>PRESENCE DR12 TEST</strong>). If <span class="underline">successful</span>, the Tribute is activated. If the test <span class="underline">fails</span>, lose <strong>2HP</strong> and become <strong>disoriented</strong> and <strong>dizzy</strong> for the next hour.
+                    </span>
                     @for (tribute of equipmentObj.tributesArray; track $index) {
                         <div class="tribute">
                             <em class="tribute-type">{{tribute.type}}</em>
                             <span class="tribute-info">
                                 <strong (click)="getTributes(tribute.type, tribute.index, true)" class="clickable info">{{tribute.name}}</strong>
                                 <span [innerHTML]="tribute.descrip"></span>
-                                <!-- <div>{{tribute.index}}</div> -->
                             </span>
                         </div>
                     }
+                </div>
+            }
+
+            @if (equipmentObj.wurmsArray.length > 0) {
+                <div class="wurm-card">
+                    <strong (click)="rerollAllWurms()" class="clickable wurms-title">WURM CRYOLOCKER</strong>
+                    <ul>
+                        @for (wurm of equipmentObj.wurmsArray; track $index) {
+                            <li>
+                                <strong (click)="rerollWurm($index)" class="underline clickable">{{wurm}}</strong>
+                            </li>
+                        }
+                    </ul>
                 </div>
             }
         </div>

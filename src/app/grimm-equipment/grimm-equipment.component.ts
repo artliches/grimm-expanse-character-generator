@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RandomNumberService } from '../services/random-number.service';
 import { EquipmentObj, Job, TributesObj } from '../models/grimm-interfaces';
-import { ARMORS, ENCRYPTED_TRIBUTES, HACKED_TRIBUTES, STARTING_EQUIPMENT, WEAPONS } from '../assets/fonts/grimm.constants';
+import { ARMORS, ENCRYPTED_TRIBUTES, HACKED_TRIBUTES, STARTING_EQUIPMENT, WEAPONS, WURMS } from '../assets/fonts/grimm.constants';
 
 @Component({
   selector: 'app-grimm-equipment',
@@ -20,6 +20,7 @@ export class GrimmEquipmentComponent implements OnChanges {
     weapon: '',
     armor: '',
     tributesArray: [],
+    wurmsArray: [],
   };
 
   trimmedWeaponTable: string[] = [];
@@ -38,6 +39,7 @@ export class GrimmEquipmentComponent implements OnChanges {
     this.equipmentObj.weapon = '';
     this.equipmentObj.starting = [];
     this.equipmentObj.tributesArray = [];
+    this.equipmentObj.wurmsArray = [];
 
     this.equipmentObj.starting.push(STARTING_EQUIPMENT[0][0]);
     if (this.currentJob.name !== 'The Lost Technomaniac') {
@@ -64,6 +66,13 @@ export class GrimmEquipmentComponent implements OnChanges {
         this.getTributes(tribute.type, tributeIndex);
         tributeIndex++;
       });
+    }
+
+    if (this.currentJob.gear.wurms) {
+      this.random.shuffleArray(WURMS);
+      for (let i = 0; i < this.currentJob.gear.wurms; i++) {
+        this.equipmentObj.wurmsArray.push(WURMS[i]);
+      }
     }
   }
 
@@ -202,5 +211,30 @@ export class GrimmEquipmentComponent implements OnChanges {
     }
 
     this.equipmentObj.armor = this.trimmedArmorTable[newIndex];
+  }
+
+  rerollAllWurms() {
+    for (let i = 0; i < this.equipmentObj.wurmsArray.length; i++) {
+      this.rerollWurm(i);
+    }
+  }
+
+  rerollWurm(index: number) {
+    let newIndex = WURMS.indexOf(this.equipmentObj.wurmsArray[index]);
+    let wurmsIndexToSkip: number[] = [];
+
+    this.equipmentObj.wurmsArray.forEach(wurm => {
+      wurmsIndexToSkip.push(WURMS.indexOf(wurm));
+    });
+
+    do {
+      newIndex ++;
+    } while (wurmsIndexToSkip.includes(newIndex));
+
+    if (newIndex === WURMS.length) {
+      newIndex = 0;
+    }
+
+    this.equipmentObj.wurmsArray[index] = WURMS[newIndex];
   }
 }

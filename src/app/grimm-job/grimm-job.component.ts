@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { DisplayedJob, Job } from '../models/grimm-interfaces';
 import { CommonModule } from '@angular/common';
 import { RandomNumberService } from '../services/random-number.service';
+import { WURMS } from '../assets/fonts/grimm.constants';
 
 @Component({
   selector: 'app-grimm-job',
@@ -23,14 +24,7 @@ export class GrimmJobComponent implements OnChanges {
       descrip: '',
     },
   };
-  wurms: string[] = [
-    'Carnitious',
-    'The Cruor',
-    'Neuroc',
-    'Ramethus',
-    'The Rot',
-    'Tergus'
-  ];
+  wurms: string[] = WURMS;
 
   currentWurm: string = '';
 

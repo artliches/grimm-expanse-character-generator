@@ -896,3 +896,12 @@ export const ENCRYPTED_TRIBUTES = [
     descrip: '<strong>d2</strong> creatures dematerialize and teleport to one of <strong>d8</strong> <span class="underline">Random Locations</span>.'
 },
 ];
+
+export const WURMS = [
+    'Carnitious (Flesh Wurm)',
+    'The Cruor (Blood Wurm)',
+    'Neuroc (Brain Wurm)',
+    'Ramethus (Heart Wurm)',
+    'The Rot (Gut Wurm)',
+    'Tergus (Spinal Wurm)'
+];
