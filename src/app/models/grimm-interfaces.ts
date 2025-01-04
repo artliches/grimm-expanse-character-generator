@@ -5,9 +5,14 @@ export interface Identity {
         second: string,
     },
     isFlesh: boolean,
-    scars: string,
+    scars: string[],
     idiosyncrasies: string,
 }
+
+export interface TitleDescripObj {
+    title: string, 
+    descrip: string,
+};
 
 export interface Job {
     name: string,
@@ -16,11 +21,11 @@ export interface Job {
         title: string,
         table: string[],
     },
-    skillz?: {title: string, descrip: string}[],
+    skillz?: TitleDescripObj[],
     skillzTable?: {
         title: string,
         descrip: string,
-        table: {title: string, descrip: string}[]
+        table: TitleDescripObj[]
     },
     extras: string[],
     stats: {

@@ -9,13 +9,18 @@
       <app-toolbar
         class="toolbar"
         (printEmitter)="print()"
+        (extraClassesEmitter)="enableExtraClasses($event)"
       ></app-toolbar>
       <app-grimm-abilities
         class="abilities"
         [currentJob]="currentJob"
       >
       </app-grimm-abilities>
-      <app-grimm-identity class="identity"></app-grimm-identity>
+      <app-grimm-identity
+        class="identity"
+        [currentJob]="currentJob"
+      >
+      </app-grimm-identity>
       <app-grimm-job
         class="job"
         [currentJob]="currentJob"
@@ -35,6 +40,6 @@
     </div>
     <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
     <div>Web app by codeLiches</div>
-    <div>v0.51: Something slithers...</div>
+    <div>v0.6: This boarding party smells funny</div>
   </footer>
 </span>

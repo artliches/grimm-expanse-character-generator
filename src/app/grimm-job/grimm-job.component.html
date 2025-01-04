@@ -4,14 +4,25 @@
             <div (click)="emitNewJob()" class="clickable card-title">
                 {{currentJob.name}}
             </div>
+            @if (showClownButton) {
+                <div (click)="toggleClownMode()" class="clickable clown-mode">
+                    @if (clownModeActive) {
+                        <img src="/clown_smile.png" alt="">
+                    } @else {
+                        <img src="/clown_frown.png" alt="">
+                    }
+                </div>
+            }
         </div>
         <div class="card-body">
             <em class="descrip"><span [innerHTML]="currentJob.descrip"></span></em>
-            <div class="extras">
-                @for (extra of currentJob.extras; track $index) {
-                    <span [innerHTML]="extra"></span>
-                }
-            </div>
+            @if (currentJob.extras.length > 0) {
+                <div class="extras">
+                    @for (extra of currentJob.extras; track $index) {
+                        <span [innerHTML]="extra"></span>
+                    }
+                </div>
+            }
             <div class="details">
                 <strong (click)="rerollDetail()" class="clickable info">{{ currentJob.details.title }}</strong>
                 <div [innerHTML]="displayedJob.detail"></div>

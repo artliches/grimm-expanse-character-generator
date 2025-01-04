@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { DisplayedJob, Job } from '../models/grimm-interfaces';
+import { DisplayedJob, Job, TitleDescripObj } from '../models/grimm-interfaces';
 import { CommonModule } from '@angular/common';
 import { RandomNumberService } from '../services/random-number.service';
-import { WURMS } from '../assets/fonts/grimm.constants';
+import { CLOWN_SKILLZ, WURMS } from '../assets/fonts/grimm.constants';
 
 @Component({
   selector: 'app-grimm-job',
@@ -25,8 +25,17 @@ export class GrimmJobComponent implements OnChanges {
     },
   };
   wurms: string[] = WURMS;
-
   currentWurm: string = '';
+
+  showClownButton: boolean = false;
+  clownModeActive: boolean = false;
+  jobsThatCanClown: string[] = [
+    'Brutal Savage *',
+    'Merciless Mercenary *',
+    'Plunderluster *',
+    'Salty Dog *'
+  ];
+  unClownedSkillz: TitleDescripObj[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
     this.random.shuffleArray(this.currentJob.details.table);
@@ -40,10 +49,30 @@ export class GrimmJobComponent implements OnChanges {
       };
     }
     this.rerollDetail();
+
+    this.clownModeActive = false;
+    this.showClownButton = this.jobsThatCanClown.includes(this.currentJob.name);
   }
 
   emitNewJob() {
     this.newJobEmitter.emit(true);
+  }
+
+  toggleClownMode() {
+    this.clownModeActive = !this.clownModeActive;
+
+    if (this.clownModeActive) {
+      if (this.currentJob.skillz) {
+        this.unClownedSkillz = this.currentJob.skillz; 
+      }
+      this.random.shuffleArray(CLOWN_SKILLZ);
+      this.currentJob.skillz = CLOWN_SKILLZ;
+    } else {
+      this.currentJob.skillz = this.unClownedSkillz;
+      this.random.shuffleArray(this.currentJob.skillz);
+    }
+    
+    this.rerollSkillz();
   }
 
   rerollDetail() {

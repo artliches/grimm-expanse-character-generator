@@ -2,8 +2,10 @@
     position: relative;
     border-bottom: 2px solid var(--yellow);
     width: 100%;
+    display: flex;
+    flex-direction: column;
     .clickable {
-        font-size: var(--small);
+        font-size: var(--smaller);
         width: max-content;
         font-weight: bold;
         font-family: 'Adder';
@@ -16,5 +18,20 @@
         border-right-width: 4px;
         border-left: none;
         border-bottom: none;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .toolbar-layout {
+        .clickable {
+            font-size: var(--small);
+        }
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .toolbar-layout {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

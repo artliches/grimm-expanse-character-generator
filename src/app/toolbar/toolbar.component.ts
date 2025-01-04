@@ -8,9 +8,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ToolbarComponent {
   @Output() printEmitter: EventEmitter<boolean> = new EventEmitter();
+  @Output() extraClassesEmitter: EventEmitter<boolean> = new EventEmitter();
+
+  enableExtraClasses: boolean = false;
 
   emitPrintEvent() {
     this.printEmitter.emit(true);
+  }
+
+  toggleExtraClasses() {
+    this.enableExtraClasses = !this.enableExtraClasses;
+    this.extraClassesEmitter.emit(this.enableExtraClasses);
   }
 
 }

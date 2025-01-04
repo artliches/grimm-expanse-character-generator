@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RandomNumberService } from '../services/random-number.service';
-import { Identity } from '../models/grimm-interfaces';
+import { Identity, Job } from '../models/grimm-interfaces';
 import { BOT_IDIOSYNCRASIES, BOT_SCARS, FLESH_SCARS, IDIOSYNCRASIES, NAMES, PERSONALITY } from '../assets/fonts/grimm.constants';
 import { CommonModule } from '@angular/common';
 
@@ -10,10 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './grimm-identity.component.html',
   styleUrl: './grimm-identity.component.scss'
 })
-export class GrimmIdentityComponent implements OnInit {
+export class GrimmIdentityComponent implements OnInit, OnChanges {
   constructor(
     private random: RandomNumberService
   ) {}
+
+  @Input() currentJob: Job = {} as Job;
 
   identityObj: Identity = {
     name: '',
@@ -22,23 +24,41 @@ export class GrimmIdentityComponent implements OnInit {
       second: '',
     },
     isFlesh: true,
-    scars: '',
+    scars: [],
     idiosyncrasies: '',
   };
 
   ngOnInit(): void {
-      this.shuffleIdentityArrays();
-      this.rerollName();
-      this.getInitialPersonality();
-      this.rerollScars();
-      this.rerollIdiosyncrasies();
+    this.shuffleIdentityArrays();
+    this.rerollName();
+    this.getInitialPersonality();
+    this.rerollIdiosyncrasies();
+    this.getNewScars(0, true);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      if (changes && changes['currentJob']) {
+        if (changes['currentJob'].currentValue && changes['currentJob'].currentValue.name === 'Brutal Savage *') {
+          this.identityObj.scars = [];
+          for (let i = 0; i < 2; i++) {
+            this.getNewScars(i, true);
+          }
+        } else if (changes['currentJob'].previousValue && changes['currentJob'].previousValue.name === 'Brutal Savage *') {
+          this.identityObj.scars = [];
+          this.getNewScars(0, true);
+        }
+      }
   }
 
   rerollAll() {
+    const numScars = this.currentJob.name === 'Brutal Savage *' ? 2 : 1;
+
     this.rerollName();
     this.rerollPersonality('first');
     this.rerollPersonality('second');
-    this.rerollScars();
+    for (let i = 0; i < numScars; i++) {
+      this.getNewScars(i, false);
+    }
     this.rerollIdiosyncrasies();
   }
 
@@ -75,18 +95,28 @@ export class GrimmIdentityComponent implements OnInit {
     this.identityObj.personalityObj[sectionToReroll as keyof typeof this.identityObj.personalityObj] = PERSONALITY[newIndex];
   }
 
-  rerollScars() {
+  getNewScars(index: number, isNew: boolean) {
     const scarsTable: string[] = this.identityObj.isFlesh ? FLESH_SCARS : BOT_SCARS;
-    let newIndex: number = scarsTable.indexOf(this.identityObj.scars);
-    const isEndOfArray = newIndex + 1 === scarsTable.length;
+    let newIndex: number = scarsTable.indexOf(this.identityObj.scars[index]);
+    const indexesToSkip: number[] = [];
 
-    if (isEndOfArray) {
+    this.identityObj.scars.forEach(scar => {
+      indexesToSkip.push(scarsTable.indexOf(scar));
+    });
+
+    do {
+      newIndex ++;
+    } while (indexesToSkip.includes(newIndex));
+
+    if (newIndex + 1 >= scarsTable.length) {
       newIndex = 0;
-    } else {
-      newIndex += 1;
     }
 
-    this.identityObj.scars = scarsTable[newIndex];
+    if (isNew) {
+      this.identityObj.scars.push(scarsTable[newIndex]);
+    } else {
+      this.identityObj.scars[index] = scarsTable[newIndex];
+    }
   }
 
   rerollIdiosyncrasies() {

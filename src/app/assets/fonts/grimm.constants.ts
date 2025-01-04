@@ -89,7 +89,7 @@ export const FLESH_SCARS = [
     `a Seeping wound; constant, slow stream of pus leaks from your belly`,
     `thick Curling toenails that curve under your toes; you walk on your heels `,
     `perpetual Grave mouth; a vile stench comes from your facehole whenever you open it`,
-    `Nervous; you’ve gnawed your nails almost completely off`,
+    `shot nerves; you’ve gnawed your nails almost completely off`,
     `Back blisters; carrying anything on your back causes horrible pain`,
     `a Missing ear, lost in a bet`,
     `No nose, ripped off your face by the teeth of a beast`,
@@ -112,7 +112,7 @@ export const BOT_SCARS = [
     `Crossed wiring; so much damage you seem half-drunk all the time`,
     `Fused feet; you walk on your heels`,
     `perpetual Grave mouth; a vile stench comes from your facehole whenever you open it`,
-    `Nervous; you've gnawed your paint almost completely off`,
+    `shot nerves; you've gnawed your paint almost completely off`,
     `Bad hydraulics; carrying anything on your back causes horrible pain`,
     `a Missing ear, lost in a bet`,
     `a Large dent in the middle of your faceplate, probably delivered by an angry programmer`,
@@ -749,6 +749,299 @@ export const JOBS = [
             wurms: 1,
         },
         isBot: false,
+    },
+];
+
+export const ADDITIONAL_JOBS = [
+    //Brutal Savage
+    {
+        name: 'Brutal Savage *',
+        descrip: `
+            Most of your humanity has been <strong>ravaged from your soul</strong>. 
+            People can see that emptiness when they look into the black holes that were once eyes. 
+            <strong>You are a ferocious scoundrel.</strong> 
+            Riddled with more scars than the number of teeth in your putrid mouth, you’ve seen things most have not. 
+            You’ll survive, even if it means <strong>everyone else must die</strong>.
+        `,
+        details: {
+            title: 'RAVAGER',
+            table: [
+                `You saw your last crew eviscerated by Raiders who had been pushed past the brink of sanity. Starving, you <strong>ate some of the remains</strong> and now have a <strong>taste for human flesh</strong>.`,
+                `You awoke in a mass grave in the <strong>Rings Eternal</strong>, buried under members of <strong>YOUR LEGION</strong>. You haven’t been the same since you dug your way out.`,
+                `Born alongside a colony of hatching <strong>Salazarites</strong>, you swear you broke your way out of an <strong>egg sac</strong> just like your siblings. `,
+                `Six months ago, you were discovered in an <strong>abandoned space station</strong>. You were dressed as one of the <strong>Grimm Corps</strong>. You have no memories before that time, but you are <strong>filled with nightmares</strong>.`,
+                `<strong>King Saule’s interrogators</strong> tortured you for more years than you can remember. Fueled by pain and rage, <strong>violence is your only way to cope</strong>.`,
+                `Your parents were infected with würms. You sat back and watched them <strong>decimate your entire colony</strong>. Before becoming one of <strong>The Grimm</strong>, your mother jettisoned you in an escape pod.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `TRIGGER HAPPY`,
+                descrip: `One word sets you off on a brutal <strong>killing spree</strong>. When heard, <strong>attack the closest creature twice per round until defeated</strong>. `
+            },
+            {
+                title: `STARE INTO THE ABYSS`,
+                descrip: `
+                   Enemies who lock eyes with you suffer <strong>−4 Morale</strong>.`
+            },
+            {
+                title: 'CANNIBAL CURE',
+                descrip: `
+                     Human meat is your favorite snack. When consumed fresh, heal <strong>d8 HP</strong>, regain <strong>d4 Favors</strong> / rotted, <strong>d4 HP</strong> and <strong>d2 Favors</strong>.  `
+            },
+            {
+               title: `GANGRENOUS GOO`, 
+               descrip: `
+                    Your left arm is in a constant state of transition. A gangrenous, green goo feeds on your appendage. The magickal rot eats away at what it touches, <strong>d6 damage</strong>.`
+            },
+            {
+               title: `GRUESOME GRILL`, 
+               descrip: `Your mouth is your favorite weapon. You have filed your teeth to points sharper than the finest knives. <strong>d4 damage</strong> / <strong>d6 damage on bare flesh</strong>.`
+            },
+            {
+                title: `BRASS MONKEY`, 
+                descrip: `
+                    This cyborg monkey follows you around, stealing scraps when it can. 
+                    It understands you but only listens 30% of the time and will throw feces at you just to hear your crew laugh. 
+                    <p>Defends with <strong>DR10</strong>, <strong>d4 HP</strong>.</p>`
+            },
+        ],
+        extras: [
+            `Roll twice for <strong>Battle Scars</strong>`
+        ],
+        stats: {
+            hp: 8,
+            strength: 1,
+            toughness: 1,
+            credits: '2d4x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 10,
+            armor: 2
+        },
+        isBot: false,
+    },
+    //Merciless Mercenary
+    {
+        name: 'Merciless Mercenary *',
+        descrip: `
+            It’s all about those <strong>Credstiks</strong>. 
+            Doesn’t matter what the job is, if the payout is high enough, <strong>you’ll take it on</strong>. 
+            What moral fiber once resided in your being was squeezed out of you a long-ass time ago. 
+            Chances are, you <strong>aren’t big on loyalty either</strong>. 
+            For the right price, you’ll switch sides faster than you can say <strong>“astrosec</strong>.”
+        `,
+        details: {
+            title: 'GUN FOR HIRE',
+            table: [
+                `An older sibling forced you to watch horrific video feeds at a young age; <strong>now you feel nothing except when killing</strong>.`,
+                `Captured by <strong>The Grimm</strong> while warring on the Outer Rings, you were <strong>tortured for more than a lifetime</strong> before escaping.`,
+                `Spat and pissed on one too many times by <strong>King Saule</strong>. You got tired of being his muscle.`,
+                `You turned on your crew, <strong>killing them all</strong>, to save yourself.`,
+                `You grew up with less than nothing. All you ever wanted were <strong>nice things</strong>. Now you can have them, just need to earn more <strong>Credstiks</strong>.`,
+                `Each night, you dream of a collection of <strong>decapitated heads</strong>, each suspended in its own glass display. With enough <strong>Credstiks</strong>, this could be yours.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `INDESTRUCTIBLE`,
+                descrip: `You know you’re indestructible. When reaching <strong>zer0 HP</strong>, you have a 50% chance of rebounding with <strong>d4 HP</strong>. `
+            },
+            {
+                title: `I WANNA RIOT`,
+                descrip: `
+                    If you’re gonna go down, you’re gonna take somebody out. When at <strong>half HP</strong>, gain an <strong>extra attack every round</strong> until resting.`
+            },
+            {
+                title: 'TIME BOMB',
+                descrip: `
+                        You specialize in making things go <strong>boom</strong> exactly when you want them to. <strong>Presence DR10 TEST</strong> to craft 1 bomb each day. <strong>2d6 damage</strong>, <strong>30′ radius</strong>.`
+            },
+            {
+                title: `NATURAL NIHILISM`, 
+                descrip: `
+                    You reject known truths and ignore the words of others. <strong>+2</strong> on tests to <strong>resist others’ influence on you</strong>.`
+            },
+            {
+                title: `GIVE ’EM THE BOOT`, 
+                descrip: `Stomp-activated <strong>electro-blade</strong> extends from your boots. <strong>d8 damage</strong> (<em>2 charges/use</em>).`
+            },
+            {
+                title: `TROUBLEMAKER`, 
+                descrip: `
+                    You start shit wherever you go; maybe it’s the <strong>smirk on your mangled face</strong>. 
+                    <p>All eyes are on you; everyone else in YOUR LEGION gains <strong>+2 the first round of combat</strong>.</p>`
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 8,
+            strength: 1,
+            presence: 1,
+            credits: '2d8x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 8,
+            armor: 4
+        },
+        isBot: false,
+    },
+    //Plunderluster
+    {
+        name: 'Plunderluster *',
+        descrip: `
+            <strong>Bright, vibrant, and verbose</strong>, your presence is known wherever you plant your boots. 
+            You’re in this for the thrill of the hunt and the stories that will be told of the name you are making. 
+            Whether pursuing riches, food, or personal pleasures, it’s all about <strong>the adventure of finding it</strong>. 
+            <strong>It is not worth doing if not done with bravado</strong>.
+        `,
+        details: {
+            title: 'SWASHBLASTER',
+            table: [
+                `You grew up in a troupe of traveling performers; while they distracted, <strong>you pilfered</strong>.`,
+                `At six, you were abandoned on a<strong> derelict space station</strong>. Your only company for years were <strong>ancient pirate flicks and a Parr|b0t</strong>.`,
+                `You broadcast as much of your raiding as you can in search of fame. You’ve gained a <strong>small following on the Netwürk</strong> and are now an <strong>attention whore</strong>.`,
+                `A feared captain passed down his legacy to you. <strong>Only two people know you are not this notorious Raider</strong>.`,
+                `Once a <strong>service bot</strong>, you were reprogrammed to talk like a pirate. The more you downloaded about the ancient culture, the more you knew <strong>this was your calling</strong>.`,
+                `There’s not much to live for in this dying ’verse; you want to make sure <strong>everyone knows your name and all you’ve plundered</strong>.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `FANCY PANTS`,
+                descrip: `You are the most <strong>well-dressed raider</strong> this side of the Belt of Despair. You are authoritative and confident. <strong>+2 on tests to persuade others</strong>.`
+            },
+            {
+                title: `DRAMATIC FLAIR`,
+                descrip: `
+                    Everything you do, you do with style. <strong>Crit on 19–20</strong>.`
+            },
+            {
+                title: 'CUTLASS CULT',
+                descrip: `
+                        You replaced your hand with an <strong>Electro-Cutlass</strong>. <strong>d6</strong> (<em>2 charges/strike</em>). Where it attaches stinks of decay.`
+            },
+            {
+                title: `GRIMM COMPASS`, 
+                descrip: `
+                    Pocket-sized compass has been hacked and modded to start spinning wildly when <strong>The Grimm are near</strong>.`
+            },
+            {
+                title: `ENHANCED SPYGLASS`, 
+                descrip: `Custom telescoping spyglass. Infrared setting. <strong>Presence DR12 TEST</strong> to see cloaked ships.`
+            },
+            {
+                title: `MISDIRECTED`, 
+                descrip: `
+                    Distract with your flourish <strong>once per scene</strong>. Reduce DR for your crew by <strong>2 for one round</strong>.`
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 4,
+            agility: 1,
+            presence: 1,
+            credits: '2d8x10',
+            favors: 4
+        },
+        gear: {
+            weapons: 8,
+            armor: 2
+        },
+        isBot: false,
+    },
+    //Salty Dog
+    {
+        name: 'Salty Dog *',
+        descrip: `
+            You’ve been soaring the skies as far back as you can remember. 
+            Stealing, plundering, and salvaging is where you <strong>shine brightest</strong>. 
+            All you’ve ever known is the way of the Raider. 
+            You didn’t choose this life, it chose you. 
+            <strong>And you wouldn’t have it any other way!</strong>
+        `,
+        details: {
+            title: 'SKYBORN',
+            table: [
+                `Abandoned in an escape pod, you were discovered by the <strong>Revenant’s Revenge</strong>. They chose not to eat you. `,
+                `You’ve soared with a few of the current Raider factions. <strong>One captain wants your head</strong>.`,
+                `<strong>Your parents sold you</strong> to a Raider captain at a young age. You did the shit jobs on the starship, but you got <strong>fed better than where you came from</strong>.`,
+                `Thirteen years ago, you <strong>teleported from an ancient time</strong> where you worked at an outdoor festival, <strong>dressing and talking like a pirate</strong>. The first year in the ’verse, you <storng>swore you were hallucinating</storng>.`,
+                `You’re not who you say you are. <strong>The Grimm and many others want you dead</strong>.`,
+                `You’ve been searching for an <strong>ancient, rumored treasure</strong> since you ran away from home to join up with a crew of Raiders. <strong>You have not found it</strong>.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `FLOWN THAT`,
+                descrip: `You’ve been on just about every type of ship. <strong>+2 on tests using Ship Abilities</strong>.`
+            },
+            {
+                title: `SCURVY SPIT`,
+                descrip: `
+                    Your mouth is its own kind of hell. When up <em>close and personal</em>, others suffer <strong>−2 to rolls from your putrid stench</strong>.`
+            },
+            {
+                title: 'TRAPJAW',
+                descrip: `
+                        You’ve got a metal mandible with sharp, pointy teeth. <strong>d6 damage</strong>; on <strong>6</strong>, <em>roll again and add it</em>.`
+            },
+            {
+                title: `SHIP TALKER`, 
+                descrip: `
+                    The starships just speak to you in ways most folks don’t understand. <strong>+4 to tests repairing or altering ships</strong>.`
+            },
+            {
+                title: `NATURAL-BORN PILLAGER`, 
+                descrip: `You know what will earn you credits and what people will trade for. <strong>+2 on Presence tests when searching for valuables</strong>.`
+            },
+            {
+                title: `BEEN THERE, KNOW THAT`, 
+                descrip: `
+                    Traveling all over the ’verse, you’ve got a solid understanding of who and what remains. <strong>+2 to tests requiring that knowledge</strong>.`
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 6,
+            presence: 2,
+            credits: '2d6x10',
+            favors: 4
+        },
+        gear: {
+            weapons: 6,
+            armor: 4
+        },
+        isBot: false,
+    },
+];
+
+export const CLOWN_SKILLZ = [
+    {
+        title: 'CLOWNING OUT',
+        descrip: 'Crank up some jams, <strong>choose one target</strong>, and move your feet. While clown dancing, <strong>Defense tests are +2</strong>.'
+    },
+    {
+        title: 'UP YOUR SLEEVE',
+        descrip: '<strong>Once per session</strong>, pull something unexpected out of your sleeve',
+    },
+    {
+        title: 'RED NOSE ',
+        descrip: 'Honk your nose to <strong>disrupt all batteries in the room for d4 rounds</strong>. Needs to recharge after use.',
+    },
+    {
+        title: 'SQUIRTING FLOWER',
+        descrip: 'You have a synthetic, squirting flower, attached to your poisoned bladder that can shoot across a room. <p>Attack <strong>DR10 TEST</strong>, <strong>d4 damage</strong>.</p>',
+    },
+    {
+        title: 'MINIATURE ELEPHANT',
+        descrip: 'This genetically modified pachyderm follows you around, carrying equipment. <strong>It is always hungry</strong>. <p>Defends with <strong>DR12</strong>, <strong>d6 HP</strong>.</p>',
+    },
+    {
+        title: 'VOID PUPPETS',
+        descrip: '<strong>Twice per session</strong>, cast <span class="underline">shadow puppets</span>: <p><strong>Strength DR12 TEST</strong> to consume <strong>d4 creatures</strong>, shrinking them down to the size of a cockroach.</p>',
     },
 ];
 
