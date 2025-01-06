@@ -968,7 +968,7 @@ export const ADDITIONAL_JOBS = [
                 `Abandoned in an escape pod, you were discovered by the <strong>Revenant’s Revenge</strong>. They chose not to eat you. `,
                 `You’ve soared with a few of the current Raider factions. <strong>One captain wants your head</strong>.`,
                 `<strong>Your parents sold you</strong> to a Raider captain at a young age. You did the shit jobs on the starship, but you got <strong>fed better than where you came from</strong>.`,
-                `Thirteen years ago, you <strong>teleported from an ancient time</strong> where you worked at an outdoor festival, <strong>dressing and talking like a pirate</strong>. The first year in the ’verse, you <storng>swore you were hallucinating</storng>.`,
+                `Thirteen years ago, you <strong>teleported from an ancient time</strong> where you worked at an outdoor festival, <strong>dressing and talking like a pirate</strong>. The first year in the ’verse, you <strong>swore you were hallucinating</strong>.`,
                 `You’re not who you say you are. <strong>The Grimm and many others want you dead</strong>.`,
                 `You’ve been searching for an <strong>ancient, rumored treasure</strong> since you ran away from home to join up with a crew of Raiders. <strong>You have not found it</strong>.`,
             ]
@@ -1016,6 +1016,299 @@ export const ADDITIONAL_JOBS = [
         },
         isBot: false,
     },
+    //Devo|Bot
+    {
+        name: 'Devo|Bot *',
+        descrip: `
+            Reprogrammed to facilitate the needs of the <strong>Fatumites on K2-116b</strong>, you are a unique <strong>Emo|Bot</strong> who has the skills necessary to sustain the missionaries’ objectives even if all the <strong>meatbags</strong> around you <strong>die from the planet’s severe environment</strong>. 
+            You were built to serve <strong>THEY</strong>, and you will do so for as long as you possibly can.
+        `,
+        details: {
+            title: 'PROGRAMMED DISCIPLE',
+            table: [
+                `<strong>The Grimm</strong> took spare parts from all the other bots and fused them together to make you and then sent you on your way in an escape pod. `,
+                `You served one family of <strong>Devout</strong> for generations. Finally, something in your programming snapped, and you left their service. All of the years hearing about <strong>THEY</strong> and <strong>The Six</strong> made you a believer.`,
+                `You despise <strong>flesh bags</strong> for failing to recognize your inner soul and cannot wait for the day <strong>THEY</strong> consume all.`,
+                `Your ancestors were data-driven search bots. It is in your nature to <strong>always uncover the truth</strong>, and you believe <strong>THEY</strong> are the one, true equalizer.`,
+                `You were aboard a starship that arrived on <strong>K2-116b</strong> over 100 years ago. You liked the red-oxide color and <strong>have never left</strong>.`,
+                `The laser-etched symbol of <strong>The Six</strong> covers your chest. You have no idea how or why it is there. <strong>None of the Devout will tell you</strong>.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `OXYGENATING ARMOR`,
+                descrip: `Your metal exoskeleton doubles as an air purifier in a <strong>10′ radius</strong>. <strong>DR−6</strong> on all <strong>Toughness TEST</strong> involving breathing within that space. <strong>Tier 2</strong> <em>−d4</em>.`
+            },
+            {
+                title: `BIG DATABRAIN`,
+                descrip: `
+                    You have learned much over the years, serving the Devout. All tests that require knowledge of <strong>THEY</strong> have their <strong>DR reduced by 4</strong>.
+                `
+            },
+            {
+                title: 'JAMMER JAW',
+                descrip: `
+                        You can unhinge your jaw to emit a high frequency; all electronics cease functioning within a <strong>15′ radius</strong> for as long as you maintain it (<strong>DR12 Presence TEST</strong>). `
+            },
+            {
+                title: `UH OH`, 
+                descrip: `
+                    You have a self-destruct mechanism that detonates automatically when you go to <strong>−1 HP</strong>. <span class="underline">At the start of each day</span>, you must announce to the GM if you have it on or off. 
+                    <p>If it is off, you may choose to engage it at any time <strong>except when you are at 0 HP</strong>. </p>
+                    <p>A result of <strong>4 on the Broken table</strong> still kills you, but you do not explode. </p>
+                    <p>The mechanism is hardwired, and you cannot change your mind once it is engaged until it resets the next day.</p>
+                    5′ radius, <strong>2d6</strong> blast damage. <strong>DR12 Agility TEST</strong> for ½ damage.`
+            },
+            {
+                title: `BLASTER BOT`, 
+                descrip: `In previous programming, you must have been made for battle. Remove your hand to reveal an energy blaster. <strong>DR10 Presence TEST</strong>. Lose <strong>1 HP</strong> each time you fire the blaster. <strong>d4 damage</strong>.`
+            },
+            {
+                title: `WüRM TECH`, 
+                descrip: `
+                    You have spent years working for the Devout, studying würms. If it is <strong>würm related</strong>, you probably have knowledge on it or can make an educated guess, <strong>reducing DR by 4</strong>`
+            },
+        ],
+        extras: [
+            `<em>Tributes do not play well with your mechanical being. You cause a <strong>Cataclysmic Condemnation</strong> on a 1–5</em>`,
+        ],
+        stats: {
+            hp: 8,
+            toughness: 2,
+            presence: -1,
+            credits: '1d2x0',
+            favors: 4
+        },
+        gear: {
+            weapons: 0,
+            blood: 6,
+            armor: 0,
+            tributesObj: [
+                {
+                    type: 'Encrypted',
+                    amount: 1
+                }
+            ],
+        },
+        isBot: true,
+    },
+    //Disciplined Devout
+    {
+        name: 'Disciplined Devout *',
+        descrip: `
+            Your devotion to <strong>Fatuma’s teachings</strong> runs deep. 
+            You have spent your life studying both the scriptures of <strong>Fatuma</strong> and the <strong>würms</strong>, and you truly understand how consequential the würms are to usher in the reign of <strong>THEY</strong>. 
+            You know that <strong>you and your würm</strong> will play a vital role in what has been written.
+        `,
+        details: {
+            title: 'ENTWINED DISCIPLE',
+            table: [
+                `As a young child, <strong>a würm tried to enter your mouth</strong>, but you quickly shut your trap. You’ve been obsessed with them ever since. `,
+                `Your family had a würm farm on a small moon. <strong>You’ve always loved the würms</strong>, but more than that, you’ve believed in their purpose, and that has made you truly <strong>Devout</strong>.`,
+                `<strong>The Grimm </strong>invaded your religious studies class. <strong>You watched as they decimated or infected your classmates</strong>. The Grimm looked in your eye, smiled, and let you be.`,
+                `You were the sole <strong>fleshbag</strong> raised by <strong>Emo|Bots</strong> on a Jailboat previously ravaged by <strong>The Grimm</strong>. You learned a ton from the metal mouths.`,
+                `You were <strong>King Saule’s</strong> dedicated assistant, handling his <strong>würm</strong> collection until he realized just how much you cared for them. You were exiled, but you snuck a <strong>würm</strong> out with you.`,
+                `When you look at the symbol of <strong>THEY</strong>, no matter where you see it, the tentacles move. You believe you have a unique connection to <strong>THEY</strong>. <strong>And you might</strong>.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `SKIN DEEP (Carnitious)`,
+                descrip: `
+                    You understand how your würm can assist those it infects and have harnessed that knowledge for yourself. When resting, sit for a while to <strong>heal d6 HP</strong>; <strong>full night, d8 HP</strong>. 
+                `
+            },
+            {
+                title: `BLOODY NOSE (Cruor)`,
+                descrip: `
+                    There’s something in the blood of those infected by würms. <strong>You have a 50% chance to sniff them out</strong>.
+                `
+            },
+            {
+                title: 'FIRING ON ALL SYNAPSES (Neuroc)',
+                descrip: `
+                        You understand what the würm does to the brain and have found a way to replicate it. <strong>Reduce Presence TESTS' DR by 2</strong>. 
+                    `
+            },
+            {
+                title: `ADRENALINE BOOST (Ramethus)`, 
+                descrip: `
+                    You let your würm get a little taste of the good stuff. When you do, get amped up for <strong>2d6 rounds</strong>: <strong>reduce Strength TESTS' DR by 2</strong>. Must rest between boosts.
+                    `
+            },
+            {
+                title: `GROSSER THAN GROSS (Rot)`, 
+                descrip: `The vile container of rotting stench you keep to feed your würm can be used as a projectile: <strong>d2 damage</strong>, <strong>1-in-4</strong> chance those hit will reduce their <strong>Presence by -2</strong> for <strong>d6 rounds</strong>`
+            },
+            {
+                title: `BACK BRACE (Tergus)`, 
+                descrip: `
+                    You let your würm cling to your back like a small child. <strong>Their hard carapace gives you an additional armor Tier</strong>.`
+            },
+        ],
+        extras: [
+            `Do not roll on the second <strong>Starting Equipment</strong> d12 table; instead start with <strong>würm</strong> (based on your skillz) the size of a large cat.`,
+        ],
+        stats: {
+            hp: 6,
+            toughness: 1,
+            presence: 1,
+            credits: '1d4x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 0,
+            blood: 4,
+            armor: 2,
+        },
+        isBot: false,
+    },
+    //The Rotters
+    {
+        name: 'The Rotters *',
+        descrip: `
+            One of the <strong>Devout</strong>, who is now long dead, gave birth to you on <strong>K2-116b</strong>. 
+            Unlike the missionaries, <strong>your organs adapted to successfully breath the toxins that others cannot endure for very long</strong>. 
+            All you have ever known is what the Fatumites have taught you. 
+            Perhaps you long to see what lies beyond this planet’s red-oxide surface. 
+            Or maybe you are happy to stay here as one of the <strong>Devout</strong>.
+        `,
+        details: {
+            title: 'BORN TOXIC',
+            table: [
+                `You, more than anyone, understand the <strong>true teachings of Fatuma</strong> because you believe you are their reincarnation. `,
+                `<strong>Smaller than other Rotters</strong>, you were born premature while the planet’s toxins decimated your mother’s body.`,
+                `You were born with a birthmark that resembles the mark of <strong>Fatuma</strong>. The Fatumites believe you will do <strong>great things</strong>.`,
+                `You have drank from a <strong>secret underground pool</strong> that gave you visions of <strong>THEY</strong> each and every time. Now when you drink anything, you still sometimes have these visions.`,
+                `Your family has a long history as <strong>high-ranking Devout</strong>. You are expected to follow in their footsteps.`,
+                `Born on the <strong>Altar of Convergence</strong>, you believe you are a <strong>würm</strong> trapped in a meatbag body. <strong>You consider all würms your siblings</strong>.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `CLOUD COUGH`,
+                descrip: `
+                    Deep in your lungs resides the spores of toxicity that you have breathed all your life. <span class="underline">Once per combat</span>, a <strong>Presence TEST</strong> allows you to cough them up to <strong>10′</strong>, causing one of <strong>K2-116b’s ailments</strong>. 
+                `
+            },
+            {
+                title: `TRIBUTARY`,
+                descrip: `
+                    You have studied the lore collected by generations of Devout. When looking at an <strong>Encrypted Tribute</strong>, <strong>DR14 Presence TEST</strong> to know what it does.
+                `
+            },
+            {
+                title: 'HIDDEN SIGIL',
+                descrip: `
+                        You have been branded with the mark of Fatuma; when placed under ultraviolet light, it glows magenta. <strong>You can get into any Devout stronghold without question</strong>.  
+
+                `
+            },
+            {
+                title: `DAD’S DEAD`, 
+                descrip: `
+                    You only knew your father for a short time. When everything rotted away from his skeleton, you kept his skull. You talk to him regularly. <strong>If you consult your father before an action, gain +2 on your roll</strong>.
+                    `
+            },
+            {
+                title: `FLESHY FINGERS`, 
+                descrip: `You have no epidermis on your fingers. Instead, your moist-looking musculature is always exposed. <p><span class="underline">When not wearing gloves</span>, those you touch must make a <strong>Toughness DR18 TEST</strong> or <strong>suffer the same afflictions of breathing the toxins of K2-116b</strong>.</p>`
+            },
+            {
+                title: `ALTARED APPETITE`, 
+                descrip: `
+                    Having grown up eating very little, you can regain <strong>HP</strong> for the <strong>first 3 days you go without food or drink</strong>.
+                `
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 6,
+            toughness: 1,
+            strength: 1,
+            presence: -1,
+            credits: '1d4x0',
+            favors: 4
+        },
+        gear: {
+            weapons: 0,
+            blood: 8,
+            armor: 2,
+        },
+        isBot: false,
+    },
+    //Swords of Fatuma
+    {
+        name: 'Swords of Fatuma *',
+        descrip: `
+            It is an honor to be stationed on <strong>K2-116b</strong>, to serve directly at the <strong>Mausoleum of THEY</strong>. 
+            At a young age, you swore yourself to the teachings of <strong>Fatuma</strong>. 
+            Unlike most of the <strong>Devout</strong>, you have trained as a soldier and are ready to <strong>protect Fatuma’s word by any means necessary</strong>. 
+
+        `,
+        details: {
+            title: 'SWORD OF FATUMA',
+            table: [
+                `A coven of <strong>Devout</strong> pulled you from the decimated remains of your childhood home after an onslaught by <strong>The Grimm</strong>. `,
+                `You were highly accomplished in your <strong>Legion</strong>, with more kills than anyone else you knew, then it happened. You had a vision of <strong>THEY</strong>, and you turned to the teachings of <strong>Fatuma</strong>.`,
+                `You were about to be sacrificed on the <strong>Altar of Convergence</strong> when your eyes rolled back in your head and you began sputtering ancient texts from the <strong>Book of Fatuma in a long-dead language</strong>. You were set free.`,
+                `You have visions of <strong>Fatuma’s</strong> return on a distant moon.`,
+                `You arrived at <strong>K2-116b</strong> accidentally. When you met the Fatumites, you found your calling.`,
+                `You awoke on a planet of <strong>Astro Zombies</strong>. Clutching the <strong>Book of Fatuma</strong> in one hand and a wrench in the other, you managed to survive. `,
+
+            ]
+        },
+        skillz: [
+            {
+                title: `GRIMM VISION`,
+                descrip: `
+                    You have an uncanny ability to observe people’s actions and identify those infected by a würm before <strong>The Grimm</strong> overtake them. <strong>Presence DR14 TEST</strong>.  
+                `
+            },
+            {
+                title: `TOUGH AS NAILS`,
+                descrip: `
+                    <span class="underline">At negative HP</span>, you are considered <strong>Broken</strong> and not <strong>Super Dead</strong>.
+                `
+            },
+            {
+                title: 'HOLY TERROR',
+                descrip: `
+                        Spend <strong>2 NP</strong> and kiss your symbol of Fatuma. <span class="underline">For two rounds</span>, you gain <strong>double attacks at −3 DR; defend at −2 DR</strong>.
+                `
+            },
+            {
+                title: `ALTARED ARMOR`, 
+                descrip: `
+                    As a <strong>Disciple of Fatuma</strong>, you were given a bodysuit made of woven <strong>Gut Würm silk</strong> (<strong>−2 damage</strong>) to wear under your clothes or other armor.  
+                    `
+            },
+            {
+                title: `SKULL GAUNTLET`, 
+                descrip: `You have a gauntlet made from a <strong>würm</strong> skull plated in metal and embellished with the mark of <strong>Fatuma</strong>. <strong>d4 damage</strong>. `
+            },
+            {
+                title: `GRIMM OUTLOOK`, 
+                descrip: `
+                    You have a pair of battery-operated goggles. <p><span class="underline">When activated</span>, they shield your eyes in a bioluminescent blue and make <strong>The Grimm</strong> believe you are one of them. (<strong>2 charges/round</strong>).</p> 
+                `
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 8,
+            toughness: 1,
+            strength: 1,
+            credits: '1d4x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 0,
+            blood: 8,
+            armor: 4,
+        },
+        isBot: false,
+    },
 ];
 
 export const CLOWN_SKILLZ = [
@@ -1055,31 +1348,31 @@ export const STARTING_EQUIPMENT = [
         `<strong class="clickable info">Hoverplate</strong> — will carry <strong>18</strong> normal-sized items. (Sometimes wanders off.) `,
     ],
     [
-        `<strong class="clickable info">Laser torch</strong>. 4 charges/use. Cuts through 3′ of 5″-thick metal/use, DR12. `,
+        `<strong class="clickable info">Laser torch</strong>. 4 charges/use. Cuts through 3′ of 5″-thick metal/use, <strong>DR12</strong>. `,
         `<strong class="clickable info">Headlamp</strong>. 1 charge/use.`,
-        `<strong class="clickable info">Glass cutter</strong>. Cuts through glass and plexiglass no thicker than 1/4″, DR10.`,
+        `<strong class="clickable info">Glass cutter</strong>. Cuts through glass and plexiglass no thicker than 1/4″, <strong>DR10</strong>.`,
         `25′ <strong class="clickable info">synthrope</strong>.`,
-        `<strong class="clickable info">Med kit</strong>. Tech+d6 uses, stops bleeding, heals d4 HP.`,
-        `<strong class="clickable info">Keycard descrambler</strong>. DR −4 when hacking locked hatches. `,
-        `<strong class="clickable info">Mini–BOOM box</strong>. Small device that looks like a radio, can be timed to detonate, d12 damage.`,
+        `<strong class="clickable info">Med kit</strong>. Tech+d6 uses, stops bleeding, heals <strong>d4 HP</strong>.`,
+        `<strong class="clickable info">Keycard descrambler</strong>. <strong>DR −4</strong> when hacking locked hatches. `,
+        `<strong class="clickable info">Mini–BOOM box</strong>. Small device that looks like a radio, can be timed to detonate, <strong>d12 damage</strong>.`,
         `<strong class="clickable info">Hacked Tribute</strong> - see below`,
         `<strong class="clickable info">Pocket multitool</strong> with fancy tooled-leather case.`,
         `<strong class="clickable info">Mummified würm</strong> strung up on a necklace.`,
         `<strong class="clickable info">Encrypted Tribute</strong> - see below`,
-        `<strong class="clickable info">Lysergic poison</strong>. d4 doses. Causes hallucinations for d8 hours.`,
+        `<strong class="clickable info">Lysergic poison</strong>. <strong>d4 doses</strong>. Causes hallucinations for <strong>d8 hours</strong>.`,
     ],
     [
         `<strong class="clickable info">Postcard collection</strong> of vacation planets, none of which you’ve visited and most of which no longer exist.`,
         `Crate of <strong class="clickable info">freeze-dried rations</strong>, 22 days’ worth.`,
-        `<strong class="clickable info">Laser knife</strong>. 3 charges/use, d4 damage.`,
-        `<strong class="clickable info">Fresh strawberries</strong> worth 50 credits, will rot in d6 days.`,
+        `<strong class="clickable info">Laser knife</strong>. 3 charges/use, <strong>d4 damage</strong>.`,
+        `<strong class="clickable info">Fresh strawberries</strong> worth 50 credits, will rot in <strong>d6</strong> days.`,
         `<strong class="clickable info">Encrypted Tribute</strong> - see below`,
         `Glow-in-the-dark <strong class="clickable info">hammer</strong>.`,
-        `<strong class="clickable info">Bot-destabilizing fluid</strong>. d2 doses, effective on mechanical creations, DR14, d12 damage.`,
-        `<strong class="clickable info">Violent ’Roid Rat</strong>. Only listens to your whistle. Consumes a day’s rations. HP d4+4, Bite d4.`,
+        `<strong class="clickable info">Bot-destabilizing fluid</strong>. <strong>d2 doses</strong>, effective on mechanical creations, <strong>DR14</strong>, <strong>d12 damage</strong>.`,
+        `<strong class="clickable info">Violent ’Roid Rat</strong>. Only listens to your whistle. Consumes a day’s rations. <strong>HP d4+4</strong>, <strong>Bite d4</strong>.`,
         `<strong class="clickable info">Flare gun</strong> with 2 flares. One white, one blue.`,
         `Well-used <strong class="clickable info">tambourine</strong>.`,
-        `<strong class="clickable info">Electroshield</strong>. Works as a battery to charge other items. Absorb 1 damage from an energy attack. Holds 10 charges, each damage = 2 charges.`,
+        `<strong class="clickable info">Electroshield</strong>. Works as a battery to charge other items. Absorb <strong>1 damage</strong> from an energy attack. Holds <strong>10 charges</strong>, each damage = 2 charges.`,
         `<strong class="clickable info">Folded-up picture</strong> of one of YOUR LEGION’s siblings.`,
     ],
 ];
@@ -1103,6 +1396,17 @@ export const ARMORS = [
     `<strong class="clickable info">TIER 2</strong> <span class="underline">Police-Grade Carbon-Fiber Body Armor</span> with sewn-in carbon-fiber guards (<strong>−d4 damage</strong>, DR +2 on Agility and Defense tests) <em>42CR</em>`,
     `<strong class="clickable info">TIER 3</strong> <span class="underline">Military-Grade Mecha-Enhanced Armored Suit</span> (<strong>−d6 damage</strong>, DR +4 on Agility tests, +2 on Defense tests) <em>80CR</em>`,
 ];
+
+export const BLOOD_WEAPONS = [
+    `<strong class="clickable info blood">Body Burner</strong> (<strong>d6, range 20′</strong>) Combust decomposing flesh, turning it into fuel. Backpack fits 1 chopped-up, human-sized body at a time. 18 uses before it needs a refill. (Carapaces and exoskeletons will clog the tank.) <em>40CR</em>`,
+    `<strong class="clickable info blood">Electric Axe</strong> (<strong>d8, 3 charges/use</strong>) <em>20CR</em>`,
+    `<strong class="clickable info blood">Electro Flail</strong> (<strong>3d4, 6 charges/use</strong>) <em>25CR</em>`,
+    `<strong class="clickable info blood">Fatumite Blade</strong> (<strong>d10</strong>) long and hefty sword. <em>10CR</em>`,
+    `<strong class="clickable info blood">Fiendhünd Horn Knife</strong> (<strong>d4</strong>) <em>2CR</em>`,
+    `<strong class="clickable info blood">Prodstick</strong> (<strong>d4, 3 charges/use</strong>) mecha-enhanced armor works as Tier 1 against these attacks.  <em>12CR</em>`,
+    `<strong class="clickable info blood">Sonic Scream Stick</strong> (<strong>24 charges/use</strong>) Causes blood vessels to burst within the target (<strong>2d8 damage</strong>). Must be in touch range. When used against a Legionnaire, target makes <strong>DR14 Toughness TEST</strong> for half damage. <em>22CR</em>`,
+    `<strong class="clickable info blood">True Neutralizer</strong> (<strong>8 charges/use</strong>) Shoots a synthetic goo. Successful attacks envelope the target in a transparent, rigid shell. Holds for <strong>2d6</strong> rounds unless target makes <strong>DR18 Strength TEST</strong>. <em>33CR</em>`,
+]
 
 export const HACKED_TRIBUTES = [
     {
@@ -1191,10 +1495,10 @@ export const ENCRYPTED_TRIBUTES = [
 ];
 
 export const WURMS = [
-    'Carnitious (Flesh Wurm)',
-    'The Cruor (Blood Wurm)',
-    'Neuroc (Brain Wurm)',
-    'Ramethus (Heart Wurm)',
-    'The Rot (Gut Wurm)',
-    'Tergus (Spinal Wurm)'
+    'Carnitious (Flesh Würm)',
+    'The Cruor (Blood Würm)',
+    'Neuroc (Brain Würm)',
+    'Ramethus (Heart Würm)',
+    'The Rot (Gut Würm)',
+    'Tergus (Spinal Würm)'
 ];

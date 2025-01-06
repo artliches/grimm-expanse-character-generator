@@ -17,6 +17,7 @@ export class GrimmJobComponent implements OnChanges {
 
   @Input() currentJob: Job = {} as Job;
   @Output() newJobEmitter: EventEmitter<boolean> = new EventEmitter();
+  @Output() devoutWurmEmitter: EventEmitter<string> = new EventEmitter();
   displayedJob: DisplayedJob = {
     detail: '',
     skillz: {
@@ -106,6 +107,8 @@ export class GrimmJobComponent implements OnChanges {
         const chosenWurmIndex = this.random.getRandomNumber(0, this.wurms.length - 1);
         this.currentWurm = this.wurms[chosenWurmIndex];
         this.displayedJob.skillz.descrip = this.displayedJob.skillz.descrip.replace('[type]', this.currentWurm);
+      } else if (this.currentJob.name === 'Disciplined Devout *') {
+        this.devoutWurmEmitter.emit(this.displayedJob.skillz.title);
       }
     }
   }

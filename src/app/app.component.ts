@@ -21,14 +21,17 @@ export class AppComponent implements OnInit {
 
   currentJob: Job = {} as Job;
   jobsArray: Job[] = [];
+  devoutWurm: string = '';
 
   ngOnInit(): void {
-      this.jobsArray = this.random.shuffleArray(JOBS);
+      this.random.shuffleArray(JOBS);
+      this.jobsArray = JSON.parse(JSON.stringify(JOBS));
 
       this.getNewJob();
   }
 
   getNewJob() {
+    this.devoutWurm = '';
     let newIndex = this.jobsArray.findIndex(job => job.name === this.currentJob.name);
     const isEndOfArray = newIndex + 1 === this.jobsArray.length;
 
@@ -41,13 +44,24 @@ export class AppComponent implements OnInit {
     this.currentJob = this.jobsArray[newIndex];
   }
 
+  getWurmForEquipment(rawWurm: string) {
+    this.devoutWurm = rawWurm.slice(rawWurm.indexOf('(') + 1, rawWurm.indexOf(')'));
+  }
+
   print() {
     window.print();
   }
 
   enableExtraClasses(enabled: boolean) {
-    this.random.shuffleArray(ADDITIONAL_JOBS);
-    Array.prototype.push.apply(this.jobsArray, ADDITIONAL_JOBS);
-    this.random.shuffleArray(this.jobsArray);
+    if (!enabled) {
+      this.random.shuffleArray(JOBS);
+      this.jobsArray = JSON.parse(JSON.stringify(JOBS));
+      this.getNewJob();
+
+    } else {
+      this.random.shuffleArray(ADDITIONAL_JOBS);
+      Array.prototype.push.apply(this.jobsArray, ADDITIONAL_JOBS);
+      this.random.shuffleArray(this.jobsArray);
+    }
   }
 }

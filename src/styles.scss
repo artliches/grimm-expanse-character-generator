@@ -141,6 +141,19 @@ body {
             color: var(--grim-pink);
         }
     }
+    &.info.blood {
+        background-color: var(--grim-pink);
+        color: black;
+        &:hover {
+            background-color: var(--yellow);
+            color: black;
+            font-weight: bold;
+        }
+        &:active {
+            background-color: black;
+            color: var(--grim-pink);
+        }
+    }
     &.tool-button {
         &:hover {
             font-size: 1rem !important;

@@ -25,11 +25,13 @@
         class="job"
         [currentJob]="currentJob"
         (newJobEmitter)="getNewJob()"
+        (devoutWurmEmitter)="getWurmForEquipment($event)"
       >
       </app-grimm-job>
       <app-grimm-equipment
         class="equipment"
         [currentJob]="currentJob"
+        [devoutWurm]="devoutWurm"
       >
       </app-grimm-equipment>
     </div>
@@ -40,6 +42,6 @@
     </div>
     <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
     <div>Web app by codeLiches</div>
-    <div>v0.62: This boarding party smells funny</div>
+    <div>v0.7: K2-116b on approach...</div>
   </footer>
 </span>

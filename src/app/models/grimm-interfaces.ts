@@ -44,6 +44,7 @@ export interface Job {
             type: string,
             amount: number,
         }[],
+        blood?: number,
         wurms?: number,
     },
     isBot: boolean,

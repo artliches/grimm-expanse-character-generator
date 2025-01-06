@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RandomNumberService } from '../services/random-number.service';
 import { EquipmentObj, Job, TributesObj } from '../models/grimm-interfaces';
-import { ARMORS, ENCRYPTED_TRIBUTES, HACKED_TRIBUTES, STARTING_EQUIPMENT, WEAPONS, WURMS } from '../assets/fonts/grimm.constants';
+import { ARMORS, BLOOD_WEAPONS, ENCRYPTED_TRIBUTES, HACKED_TRIBUTES, STARTING_EQUIPMENT, WEAPONS, WURMS } from '../assets/fonts/grimm.constants';
 
 @Component({
   selector: 'app-grimm-equipment',
@@ -15,10 +15,12 @@ export class GrimmEquipmentComponent implements OnChanges {
   ) {}
 
   @Input() currentJob: Job = {} as Job;
+  @Input() devoutWurm: string = '';
   skipSecondEquipment: string[] = [
     'The Lost Technomaniac',
     'The Devout',
     'The Harvester',
+    'Disciplined Devout *',
   ];
   equipmentObj: EquipmentObj = {
     starting: [],
@@ -34,6 +36,17 @@ export class GrimmEquipmentComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
       if (changes && changes['currentJob']) {
         this.rerollAll();
+      }
+      if (changes && changes['devoutWurm'] && changes['devoutWurm'].previousValue) {
+        if (this.currentJob.name === 'Disciplined Devout *') {
+          this.devoutWurm = WURMS[WURMS.findIndex(wurm => wurm.includes(this.devoutWurm))];
+
+          this.equipmentObj.starting.splice(
+            this.equipmentObj.starting.indexOf(this.devoutWurm), 1
+          );
+
+          this.equipmentObj.starting.push(this.devoutWurm);
+        }
       }
   }
 
@@ -52,6 +65,10 @@ export class GrimmEquipmentComponent implements OnChanges {
     }
     if (this.currentJob.name !== 'The Harvester') {
       this.equipmentObj.starting.push(STARTING_EQUIPMENT[2][0]);
+    }
+    if (this.currentJob.name === 'Disciplined Devout *') {
+      this.devoutWurm = WURMS[WURMS.findIndex(wurm => wurm.includes(this.devoutWurm))];
+      this.equipmentObj.starting.push(this.devoutWurm);
     }
     this.equipmentObj.weapon = this.trimmedWeaponTable[0];
     this.equipmentObj.armor = this.trimmedArmorTable[0];
@@ -89,12 +106,7 @@ export class GrimmEquipmentComponent implements OnChanges {
     this.random.shuffleArray(HACKED_TRIBUTES);
     this.random.shuffleArray(ENCRYPTED_TRIBUTES);
 
-    this.trimmedWeaponTable = JSON.parse(JSON.stringify(WEAPONS));
-    let numberOfWeaponsToRemove = WEAPONS.length - this.currentJob.gear.weapons;
-    while (numberOfWeaponsToRemove--) {
-      this.trimmedWeaponTable.pop();
-    };
-    this.random.shuffleArray(this.trimmedWeaponTable);
+    this.shuffleWeapons();
 
     this.trimmedArmorTable = JSON.parse(JSON.stringify(ARMORS));
     let numberOfArmorsToRemove = ARMORS.length - this.currentJob.gear.armor;
@@ -103,6 +115,22 @@ export class GrimmEquipmentComponent implements OnChanges {
     };
     this.random.shuffleArray(this.trimmedArmorTable);
 
+  }
+
+  private shuffleWeapons() {
+    let numberOfWeaponsToRemove = 0;
+    if (this.currentJob.gear.blood) {
+      this.trimmedWeaponTable = JSON.parse(JSON.stringify(BLOOD_WEAPONS));
+      numberOfWeaponsToRemove = BLOOD_WEAPONS.length - this.currentJob.gear.blood;
+    } else {
+      this.trimmedWeaponTable = JSON.parse(JSON.stringify(WEAPONS));
+      numberOfWeaponsToRemove = WEAPONS.length - this.currentJob.gear.weapons;
+    }
+
+    while (numberOfWeaponsToRemove--) {
+      this.trimmedWeaponTable.pop();
+    };
+    this.random.shuffleArray(this.trimmedWeaponTable);
   }
 
   rerollAllTributes() {

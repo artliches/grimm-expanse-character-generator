@@ -10,9 +10,15 @@
                 </strong>
                 <ul>
                     @for (starting of equipmentObj.starting; track $index) {
-                        <li>
-                            <span (click)="rerollStartingEquipment($index)" [innerHTML]="starting"></span>
-                        </li>
+                        @if (starting.includes('Würm')) {
+                            <li>
+                                <strong class="underline devout-wurm" [innerHTML]="starting"></strong>
+                            </li>
+                        } @else {
+                            <li>
+                                <span (click)="rerollStartingEquipment($index)" [innerHTML]="starting"></span>
+                            </li>
+                        }
                     }
                 </ul>
             </div>
@@ -50,7 +56,7 @@
 
             @if (equipmentObj.wurmsArray.length > 0) {
                 <div class="wurm-card">
-                    <strong (click)="rerollAllWurms()" class="clickable wurms-title">WURM CRYOLOCKER</strong>
+                    <strong (click)="rerollAllWurms()" class="clickable wurms-title">WÜRM CRYOLOCKER</strong>
                     <ul>
                         @for (wurm of equipmentObj.wurmsArray; track $index) {
                             <li>
