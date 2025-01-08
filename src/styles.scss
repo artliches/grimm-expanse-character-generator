@@ -293,11 +293,23 @@ body {
 
 @media print {
     * {
+        overflow: visible !important;
         color: black !important;
     }
 
-    footer {
+    footer, .wurm-card, .wurms-title {
         border-color: black !important;
+    }
+
+    strong.clickable {
+        text-decoration: underline;
+    }
+
+    .clown-mode {
+        border-color: black !important;
+        img {
+            filter: invert(0%) !important;
+        }
     }
 
     .toolbar {
@@ -310,14 +322,36 @@ body {
 
     .grimm-layout {
         margin: 0 0.5rem;
+        display: block !important;
+        min-height: 100% !important;
+        .grimm-body {
+            display: block !important;
+        }
     }
 
     .grimm-card-container {
-        filter: drop-shadow(-5px 5px hsla(0, 0%, 0%, 0.313));
+        filter: unset;
         .card-header {
             border-bottom: 2px solid black;
+            .card-header-button {
+                display: none;
+            }
             .card-title {
                 text-shadow: none;
+            }
+        }
+
+        .grimm-card {
+            clip-path: unset;
+        }
+
+        .grimm-card.abilities {
+            .card-body > .abilities-layout {
+                display: flex;
+                flex-direction: unset;
+                flex-flow: wrap;
+                justify-content: space-evenly;
+                gap: var(--small);
             }
         }
     }

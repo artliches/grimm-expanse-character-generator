@@ -73,7 +73,7 @@
 
             columns: 2;
             list-style-position: inside;
-            font-size: var(--small);
+            font-size: var(--smaller);
             li {
                 margin-bottom: var(--smaller);
                 strong {
@@ -83,4 +83,15 @@
             }
         }
     }
+}
+
+@media only screen and (min-width: 375px) {
+    .card-body {
+        .skillz-table {
+            ol {
+                font-size: var(--small);
+            }
+        }
+    }
+
 }
