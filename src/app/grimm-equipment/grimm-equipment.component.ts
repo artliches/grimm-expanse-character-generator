@@ -70,8 +70,12 @@ export class GrimmEquipmentComponent implements OnChanges {
       this.devoutWurm = WURMS[WURMS.findIndex(wurm => wurm.includes(this.devoutWurm))];
       this.equipmentObj.starting.push(this.devoutWurm);
     }
+    if (this.currentJob.gear.tough) {
+      this.equipmentObj.armor = `<strong class="underline">Tough Hide</strong> (<strong>-d2</strong>)`;
+    } else {
+      this.equipmentObj.armor = this.trimmedArmorTable[0];
+    }
     this.equipmentObj.weapon = this.trimmedWeaponTable[0];
-    this.equipmentObj.armor = this.trimmedArmorTable[0];
 
     //check and get tributes
     this.equipmentObj.starting.forEach((equip, index) => {

@@ -345,39 +345,45 @@ export const JOBS = [
         details: {
             title: 'ARCANE BEGINNINGS',
             table: [
-                `Awoke on Proxima b as you vomited up a large, living, slug-like creature.`,
-                `Found yourself in an unfamiliar body, clenching a dagger dripping with blood, next to a corpse on the floor atop a ritual circle.`,
-                `Previously infected by The Grimm, your body rejected the würm, leaving you with a loss of memories.`,
-                `Born blind, you found sight after staring at the communicator screen on a starship for 38 hours straight.`,
-                `Your mother died birthing you inside an esoteric library on a lonely planet.`,
-                `You were just like everyone else until you saw unspeakable events on the Moons of the Dead. You found it fascinating.`,
+                `Awoke on <strong>Proxima b</strong> as you vomited up a large, living, slug-like creature.`,
+                `Found yourself in an <strong>unfamiliar body</strong>, clenching a dagger dripping with blood, next to a corpse on the floor atop a ritual circle.`,
+                `Previously infected by <strong>The Grimm</strong>, your body rejected the <strong>würm</strong>, leaving you with a loss of memories.`,
+                `<strong>Born blind</strong>, you found sight after staring at the communicator screen on a starship for <strong>38 hours straight</strong>.`,
+                `Your <strong>mother died birthing you</strong> inside an <strong>esoteric library</strong> on a lonely planet.`,
+                `You were just like everyone else until you saw unspeakable events on the <strong>Moons of the Dead</strong>. <strong>You found it fascinating</strong>.`,
 
             ]
         },
         skillz: [
             {
                 title: 'QUIET-CONTEMPLATION DRIVE ',
-                descrip: 'Having a profound understanding of Tributes, you can randomly download d2 additional Tributes off the Netwürk per day. They are not hard coded to your device (like a standard Tribute), autodeleting after 1 use or each day.'
+                descrip: 'Having a profound understanding of Tributes, you can randomly download <strong>d2 additional Tributes</strong> off the Netwürk <span class="underline">per day</span>. <p><span class="underline">They are not hard coded to your device</span> (<strong>like a standard Tribute</strong>), autodeleting after <span class="underline">1 use or each day</span>.</p>'
             },
             {
                 title:'MAINFRAME MASTER',
-                descrip:'You can communicate with starships’ internal computer systems. The system will follow a specific command on a Tech DR10 test. A failed test will lock you out of the system for d8 rounds.'
+                descrip:`
+                You can communicate with starships’ internal computer systems. 
+                <p>
+                    <div>The system will follow a specific command on a <strong>Tech DR10 TEST</strong>.</div>
+                    <div>A <strong>failed test</strong> will lock you out of the system for <span class="underline">d8 rounds</span>.</div>
+                </p>`
             },
             {
                 title:'’BORG BAT',
-                descrip:'You have a small, cybernetic, winged rat (HP d4); you can see through its eyes and hear through its ears on a small techno-tablet.'
+                descrip:`You have a small, cybernetic, winged rat (<strong>HP d4</strong>); you can <strong>see through its eyes and hear through its ears</strong> on a small techno-tablet.`
             },
             {
                 title:'SILENCER',
-                descrip:'You’ve crafted a gadget that will suck all of the sound out of an enclosed space for d6 rounds. It’s got a built-in battery that can only be used once before recharging.'
+                descrip:`You’ve crafted a gadget that will <strong>suck all of the sound out of an enclosed space</strong> for <span class="underline">d6 rounds</span>. 
+                It’s got a built-in battery that can <span class="underline">only be used once before recharging</span>.`
             },
             {
                 title:'DIALED IN',
-                descrip:'You can use a console connected to any frequency on the Netwürk to scroll through the signal to find the info you are looking for (Tech DR10). On a natural 1, you alert The Grimm to your location.'
+                descrip:'You can use a console connected to any frequency on the Netwürk to scroll through the signal to find the info you are looking for (<strong>Tech DR10</strong>). <p><span class="underline">On a natural 1</span>, <strong>you alert The Grimm to your location</strong>.</p>'
             },
             {
                 title:'TRUE NORTH',
-                descrip:'Those who wander are never truly lost. Deep in your gut, you know which way to go and will find it with a Presence DR8 test.'
+                descrip:'Those who wander are never truly lost. Deep in your gut, <strong>you know which way to go and will find it with a Presence DR8 TEST</strong>.'
             },
         ],
         extras: [
@@ -417,55 +423,60 @@ export const JOBS = [
         details: {
             title: 'ADDICTED TO SCIENCE',
             table: [
-                `You were a starship’s doctor when The Grimm hit. All hands were lost but you.`,
-                `Your ravenous addictions led you to a life of science so you could satiate your neverending cravings for pharma.`,
-                `Always top of the class. Your peers and teachers hated you.`,
-                `You come from a long line of restaurateurs. You were the first to break free.`,
-                `Born in a metameth den on Marauder’s Cryosfear, your parents were thieves and addicts.`,
-                `Your corporate village cast you out after they discovered your infection. It was too late... for them.`,
+                `You were a starship’s doctor when <strong>The Grimm</strong> hit. All hands were lost but you.`,
+                `Your ravenous addictions led you to a life of science so you could satiate your <strong>neverending cravings for pharma</strong>.`,
+                `Always top of the class. <strong>Your peers and teachers hated you</strong>.`,
+                `You come from a long line of restaurateurs. <strong>You were the first to break free</strong>.`,
+                `Born in a metameth den on <strong>Marauder’s Cryosfear</strong>, your parents were <strong>thieves and addicts</strong>.`,
+                `Your corporate village cast you out after they discovered your infection. It was too late... <strong>for them</strong>.`,
             ]
         },
         skillzTable: {
             title: 'CREATIONS',
             descrip: `
-                <div>You have spent your youth, and now likely your life, looking for the key to neutralize The Grimm. You ain’t found shit, but you keep trying. You receive two random (d8) creations per day as you tinker with a total of d4 doses.</div>
+                <div>You have spent your youth, and now likely your life, looking for the key to neutralize The Grimm. You ain’t found shit, but you keep trying. You receive two random (<strong>d8</strong>) creations <span class="underline">per day</span> as you tinker with a total of <strong>d4 doses</strong>.</div>
 
                 <p>
-                    <div>Sadly, at the end of the day, your sketchy laboratory database deletes the files, and you must start over.</div>
+                    <div>Sadly, at the end of the day, your sketchy laboratory database deletes the files, and you must <strong>start over</strong>.</div>
                 </p>
             `,
             table: [
                 {
                     title: 'NANITE DANCE PARTY',
-                    descrip: 'Toughness DR12 test or the target shakes and soils themself uncontrollably for d6 rounds.'
+                    descrip: '<strong>Toughness DR12 TEST</strong> or the target shakes and soils themself uncontrollably for <span class="underline">d6 rounds</span>.'
                 },
                 {
                     title: 'FOG OF PLEASURE',
-                    descrip: 'Presence D12 test or sink into a mental fantasy world for d4 rounds. Regain d4 HP.'
+                    descrip: '<strong>Presence D12 TEST</strong> or sink into a mental fantasy world for <span class="underline">d4 rounds</span>. <strong>Regain d4 HP</strong>.'
                 },
                 {
                     title: 'HOPE SPRINGS ETERNAL',
-                    descrip: 'Chemical injection gives you a second chance at resisting The Grimm if you failed a GP roll.'
+                    descrip: 'Chemical injection gives you a <strong>second chance at resisting The Grimm</strong> if you failed a GP roll.'
                 },
                 {
                     title: 'ASS BLASTIN’',
-                    descrip: 'The nanites have gained access to your gut biome. You fart uncontrollably for d4 rounds. All creatures within 5′ must pass a Toughness DR12 test or be sickened, attacks and defense DR −2.'
+                    descrip: 'The nanites have gained access to your gut biome. You fart uncontrollably for <span class="underline">d4 rounds</span>. All creatures within 5′ must pass a <strong>Toughness DR12 TEST</strong> or be sickened, <strong>attacks and defense DR −2</strong>.'
                 },
                 {
                     title: 'IT WORKS',
-                    descrip: 'Nanites invade your body, repairing damage as they go. Heal d6 HP and eradicate normal infections and radiation poisoning.'
+                    descrip: 'Nanites invade your body, repairing damage as they go. <strong>Heal d6 HP</strong> and eradicate normal infections and radiation poisoning.'
                 },
                 {
                     title: '6TH SENSE',
-                    descrip: 'Synthetic spinal fluid increases presence by 2 for a full day. Shot must be administered in the spine. 1-in-8 chance of paralysis for 1 day.'
+                    descrip: 'Synthetic spinal fluid increases <strong>Presence by 2</strong> for a <span class="underline">full day</span>. Shot must be administered in the spine. <strong>1-in-8</strong> chance of paralysis for <span class="underline">1 day</span>.'
                 },
                 {
                     title: 'GIN AND JUICE',
-                    descrip: 'A powerful alcoholic effect. Increase Strength and Toughness by 1. Decrease Presence and Agility by 2. '
+                    descrip: 'A powerful alcoholic effect. Increase <strong>Strength and Toughness by 1</strong>. Decrease <strong>Presence and Agility by 2</strong>. '
                 },
                 {
                     title: 'WAKE THE DEAD',
-                    descrip: 'Inoculation can reverse the effect of death if administered within 1 minute. d6: 1 the nanites dissolve the corpse, 5–6 reverses the Dead condition to Broken. (Revived creature or character rolls.) This can only be administered to an individual once. If it doesn’t take the first time, it never will.'
+                    descrip: `Inoculation can reverse the effect of death if administered within <span class="underline">1 minute</span>. <strong>d6</strong>: 
+                    <ul class="inner-list">
+                        <li><strong>1</strong> the nanites dissolve the corpse</li>
+                        <li><strong>5–6</strong> reverses the Dead condition to Broken. (Revived creature or character rolls.)</li>
+                    </ul>
+                    <div>This can only be administered to an individual once. If it doesn’t take the first time, it never will.</div>`
                 },
             ]
         },
@@ -492,45 +503,45 @@ export const JOBS = [
         descrip: `
             <strong>You’re a total bastard. </strong>
             You generally think <strong>ONLY</strong> of yourself, and anyone who stands against you deserves what they get — <strong>a punch in the mouth or a blast to the chest</strong>. 
-            You’re not above selling out a friend if it makes you a <strong>fat stack of credstiks</strong> or gets you closer to escaping The Grimm. 
+            You’re not above selling out a friend if it makes you a <strong>fat stack of credstiks</strong> or gets you closer to escaping <strong>The Grimm</strong>. 
             <strong>Money Talks, Bullshit Walks is tattooed on your black heart. </strong>
             You understand space travel and can probably pilot a ship out of this <strong>hellhole</strong>. 
         `,
         details: {
             title: 'UNPREDICTABLE SOLDIER',
             table: [
-                `Formerly in YOUR LEGION’S army, you cowardly deserted when The Grimm hit your settlement and killed all but a handful. The survivors know what you did.`,
-                `A hero with a heart of greed, you come from a long line of private security professionals.`,
-                `Raised in the arenas on the Waste Barges of Khallar, you eat, sleep, and breathe violence. Lots of violence. You are a well-known champion. A violent one.`,
-                `Once a promising officer, your lack of good judgment in an encounter with another Legion cost you everything. It was all because of a misunderstanding.`,
-                `A merc, a common grunt, a foot soldier. You carry out your orders to a T.`,
-                `Unlucky in love, you pine for someone who understands you beneath your dispassionate self.`,
+                `Formerly in YOUR <strong>LEGION’S</strong> army, you cowardly deserted when <strong>The Grimm</strong> hit your settlement and killed all but a handful. <strong>The survivors know what you did</strong>.`,
+                `A hero with a <strong>heart of greed</strong>, you come from a long line of private security professionals.`,
+                `Raised in the arenas on the <strong>Waste Barges of Khallar</strong>, you eat, sleep, and breathe violence. Lots of violence. You are a well-known champion. <strong>A violent one</strong>.`,
+                `<strong>Once a promising officer</strong>, your lack of good judgment in an encounter with another <strong>Legion</strong> cost you everything. <strong>It was all because of a misunderstanding</strong>.`,
+                `A merc, a common grunt, a foot soldier. <strong>You carry out your orders to a T</strong>.`,
+                `Unlucky in love, you pine for someone who understands you beneath your <strong>dispassionate self</strong>.`,
             ]
         },
         skillz: [
             {
                 title: 'STOLEN VALOR',
-                descrip: 'Your merc outerwear bears the badges of legendary mercenary campaigns. Enemies Presence DR10 test or lose initiative. Actual members of those campaigns are likely to try to kill you.'
+                descrip: 'Your merc outerwear bears the badges of legendary mercenary campaigns. <p>Enemies <strong>Presence DR10 TEST</strong> or lose initiative. Actual members of those campaigns are likely to try to kill you.</p>'
             },
             {
                 title:'SCHWARZE’S STOGIE',
-                descrip:'This mechanically enhanced cigar is never consumed and tastes like a fine Cuban. Once per day, you can flick it at an enemy. If the attack test succeeds, the enemy is blinded for d4 rounds.'
+                descrip:'This mechanically enhanced cigar is never consumed and tastes like a fine Cuban. <p><span class="underline">Once per day</span>, you can flick it at an enemy. If the attack test succeeds, the enemy is <strong>blinded</strong> for <span class="underline">d4 rounds</span>.</p>'
             },
             {
                 title:'QUICK-DRAW MCGRAW',
-                descrip:'You have a mechanical apparatus attached to your arms that allows you to fire two small energy pistols. (Roll two attacks, d6 damage each.) Only good for one attack per combat, and you always go first in YOUR LEGION for initiative.'
+                descrip:'You have a mechanical apparatus attached to your arms that allows you to fire two small energy pistols. <p>(<strong>Roll two attacks, d6 damage each.</strong>) <span class="underline">Only good for one attack per combat</span>, and you always go first in <strong>YOUR LEGION</strong> for initiative.</p>'
             },
             {
                 title:'DIRTY PLAYER',
-                descrip:'You are just fine with below-the-belt kicks, sneak attacks, and sucker punches. If you can hit your opponent’s less-defended areas, attack at DR −2. If you can prove to the GM that it will be a truly underhanded attack,  DR −3.'
+                descrip:'You are just fine with below-the-belt kicks, sneak attacks, and sucker punches. <p>If you can hit your opponent’s less-defended areas, <strong>attack at DR −2</strong>. <span class="underline">If you can prove to the GM that it will be a truly underhanded attack</span>,  <strong>DR −3</strong>.</p>'
             },
             {
                 title:'KNUCKLE-DUSTER',
-                descrip:'You have surgically implanted steel knuckles underneath the skin on your hands. d4 damage when fighting barehanded.'
+                descrip:'You have surgically implanted steel knuckles underneath the skin on your hands. <strong>d4 damage when fighting barehanded</strong>.'
             },
             {
                 title:'RAGE OF THE LEGION ',
-                descrip:'Go berserk 2× per day for two rounds. Attack twice per round at DR −3 and defend at DR +2. Afterwards, you are exhausted and must take a long rest.'
+                descrip:'Go <strong>berserk</strong> <span class="underline">2× per day for two rounds</span>. <p><div>Attack <span class="underline">twice per round</span> at <strong>DR −3</strong> and defend at <strong>DR +2</strong>.</div> <div>Afterwards, you are exhausted and must take a long rest.</div></p>'
             },
         ],
         extras: [
@@ -566,38 +577,38 @@ export const JOBS = [
         details: {
             title: 'SENTIENT BOT',
             table: [
-                `Formerly a communications bot in a medical facility, you have innate knowledge of healing nanotech.`,
-                `A military mech, your development of emotions created a paradox in your synthetic cortex. Was it wrong to kill humans with overwhelming deadly force? Or was it actually really fun?`,
-                `As a personal service bot, you are accustomed to completing many mundane tasks: cooking, cleaning, tutoring, bookkeeping. You have also been secretly studying how to be an assassin. You really, really want to kill something — but quietly.`,
-                `You are a drone. Just a delivery drone. You wonder if someone might hook you up with some weapons so that you can deliver packages of a higher level. Your emotions run HOT.`,
-                `As a science bot working on cures for infestation, you developed a certain small amount of fascination and attachment to those deadly little würms. They can’t hurt you. Why should you hurt them?`,
-                `You are alone. Alone in the ’verse. To your knowledge, there are no others like you, but you search anyway, always searching for more of your kind. You are the sad bot.`,
+                `Formerly a communications bot in a medical facility, <strong>you have innate knowledge of healing nanotech</strong>.`,
+                `<strong>A military mech</strong>, your development of emotions created a <strong>paradox</strong> in your synthetic cortex. Was it wrong to kill humans with <strong>overwhelming deadly force</strong>? <strong>Or was it actually really fun</strong>?`,
+                `<strong>As a personal service bot</strong>, you are accustomed to completing many mundane tasks: cooking, cleaning, tutoring, bookkeeping. <strong>You have also been secretly studying how to be an assassin</strong>. You really, really want to <strong>kill something</strong> — but quietly.`,
+                `<strong>You are a drone</strong>. Just a delivery drone. You wonder if someone might hook you up with some weapons so that you can deliver packages of a higher level. <strong>Your emotions run HOT</strong>.`,
+                `<strong>As a science bot</strong> working on cures for infestation, you developed a certain small amount of fascination and attachment to those deadly little <strong>würms</strong>. They can’t hurt you. <strong>Why should you hurt them</strong>?`,
+                `<strong>You are alone</strong>. Alone in the ’verse. To your knowledge, there are no others like you, but you search anyway, always searching for more of your kind. <strong>You are the sad bot</strong>.`,
             ]
         },
         skillz: [
             {
                 title: 'STEELSKIN',
-                descrip: 'Your metal exoskeleton acts as Tier 3 armor (−d6) without any Agility penalties.'
+                descrip: 'Your metal exoskeleton acts as Tier 3 armor (<strong>−d6</strong>) without any Agility penalties.'
             },
             {
                 title:'ELECTRIC EYE',
-                descrip:'Your eye is a surveillance camera, always wandering around from the top of your head or body. Any visual tests are DR −2. You record up to one week of footage before overwriting the data.'
+                descrip:'Your eye is a surveillance camera, always wandering around from the top of your head or body. <p><div>Any visual tests are <strong>DR −2</strong>.</div> <div>You record up to <span class="underline">one week</span> of footage before overwriting the data.</div></p>'
             },
             {
                 title:'COME CLOSER',
-                descrip:'One of your appendages contains a high-powered magnet. Twice per day, you can Strength DR10 test to pull a nonembedded metallic item from an opponent, friend, or surface. '
+                descrip:'One of your appendages contains a high-powered magnet. <p><span class="underline">Twice per day</span>, you can <strong>Strength DR10 TEST</strong> to pull a nonembedded metallic item from an opponent, friend, or surface. </p>'
             },
             {
                 title:'UH-OH',
-                descrip:'You have a self-destruct mechanism that detonates automatically when you go to −1 HP. You may choose to engage it at any time except when you are at 0 HP. The mechanism is hardwired, and you cannot disengage it until the next day. When activated, a result of 4 on the Broken table still kills you, but you do not explode. 5′ radius, 2d6 damage, Agility DR12 test for ½ damage.'
+                descrip:'You have a self-destruct mechanism that detonates automatically when you go to <strong>−1 HP</strong>. <p><span class="underline">You may choose to engage it at any time except when you are at <strong>0 HP</strong></span>. The mechanism is hardwired, and you cannot disengage it until the next day.</p> <p><span class="underline">When activated</span>, a result of <strong>4</strong> on the <strong>Broken</strong> table still kills you, but you do not explode. <div><strong>5′ radius</strong>, <strong>2d6 damage</strong>, <strong>Agility DR12 TEST</strong> for ½ damage.</div></p>'
             },
             {
                 title:'DATA SAP',
-                descrip:'Tech DR9 test to interface with almost any computer as long as it has power. All but the most secret of files are open to your probing and edits. Highly encrypted files can be accessed with a Tech DR17 test.'
+                descrip:'<strong>Tech DR9 TEST</strong> to interface with almost any computer as long as it has power. <p>All but the most secret of files are open to your probing and edits. <div>Highly encrypted files can be accessed with a <strong>Tech DR17 TEST</strong>.</div></p>'
             },
             {
                 title:'SPEED DEALER',
-                descrip:'Your experience includes working in a med lab. You can produce d3 injectable nanotech healing cartridges (d8 HP) per day. Charges lose effectiveness after 24 hours.'
+                descrip:'Your experience includes working in a med lab. <p>You can produce <strong>d3</strong> injectable nanotech healing cartridges (<strong>d8 HP</strong>) <span class="underline">per day</span>. <div>Charges lose effectiveness after <span class="underline">24 hours</span>.</div></p>'
             },
         ],
         extras: [
@@ -634,28 +645,28 @@ export const JOBS = [
         details: {
             title: 'UNWAVERING DISCIPLE',
             table: [
-                `The Grimm came to your planet, looked in your eyes, and infected someone else.`,
-                `Awoke on the Altar of Convergence, wrists slit but still alive, to find a Wör Hound lapping up your blood.`,
-                `After coming of age, you left your religious colony to spread the beatific word of THEY.`,
-                `After seeing your lover decimated by The Grimm, a hunger awoke inside of you.`,
-                `You walked the surface of the Moons of the Dead, and nothing alive or undead crossed your path. It was weird but sort of peaceful.`,
-                `Whenever The Grimm are near, your bones ache and buzzing sounds fill your ears. It’s like the nasties want you to know where THEY are. `,
+                `<strong>The Grimm</strong> came to your planet, looked in your eyes, and infected someone else.`,
+                `Awoke on the <strong>Altar of Convergence</strong>, wrists slit but still alive, to find a <strong>Wör Hound</strong> lapping up your blood.`,
+                `After coming of age, you left your religious colony to spread the beatific word of <strong>THEY</strong>.`,
+                `After seeing your lover decimated by <strong>The Grimm</strong>, a hunger awoke inside of you.`,
+                `You walked the surface of the <strong>Moons of the Dead</strong>, and nothing alive or undead crossed your path. <strong>It was weird but sort of peaceful</strong>.`,
+                `Whenever <strong>The Grimm</strong> are near, your bones ache and buzzing sounds fill your ears. It’s like the nasties want you to know where <strong>THEY</strong> are. `,
 
             ]
         },
         skillz: [
             {title: `TORN PAGE FROM THE BOOK OF FATUMA`,
-            descrip: `When you read aloud from it, any of The Grimm within earshot will do your bidding for d4 rounds before dying. The page can only be read from once per day.`,},
+            descrip: `When you read aloud from it, any of <strong>The Grimm</strong> within earshot will do your bidding for <span class="underline">d4 rounds</span> before dying. <p>The page can only be read from <span class="underline">once per day</span>.</p>`,},
             {title: `SIX’S HÜMER`,
-            descrip: `You wield one of The Six’s rotten humerus. It looks like it is constantly vibrating from all of the parasites that have made this bone their home. d4 damage, 1-in-8 chance those hit will be infected with a würm.`,},
+            descrip: `You wield one of The Six’s rotten humerus. It looks like it is constantly vibrating from all of the parasites that have made this bone their home. <p><strong>d4 damage</strong>, <strong>1-in-8</strong> chance those hit will be infected with a <strong>würm</strong>.</p>`,},
             {title: `MAUSOLEUM DIRT`,
-            descrip: `On your pilgrimage to the Mausoleum of THEY, you collected a sack filled with dirt. When sprinkled in the air, it will wisp its way to any hidden cracks.`,},
+            descrip: `On your pilgrimage to the <strong>Mausoleum of THEY</strong>, you collected a sack filled with dirt. <p><span class="underline">When sprinkled in the air</span>, it will wisp its way to any hidden cracks.</p>`,},
             {title: `ALTARED ARMOR`,
-            descrip: `As a Disciple of Fatuma, you were given a bodysuit made of woven Gut Würm silk. When worn under your clothes or armor, gain an additional −2 damage reduction. `,},
+            descrip: `As a <strong>Disciple of Fatuma</strong>, you were given a bodysuit made of woven <strong>Gut Würm silk</strong>. <p><span class="underline">When worn under your clothes or armor</span>, gain an additional <strong>−2 damage reduction</strong>.</p>`,},
             {title: `SYMBOL OF THEY`,
-            descrip: `When you present this pitted, rusty, unholy symbol made of iron to The Grimm, their Morale doubles for d6 rounds.`,},
+            descrip: `When you present this pitted, rusty, unholy symbol made of iron to <strong>The Grimm</strong>, their <strong>Morale doubles</strong> for <span class="underline">d6 rounds</span>.`,},
             {title: `TOOTH OF THE WÜRM`,
-            descrip: `Hanging around your neck is a tooth harvested from one of the Great Würms. When you kiss it before battle, you have a 1-in-6 chance to automatically hit on your first attack and inflict 2× damage.`,},
+            descrip: `Hanging around your neck is a tooth harvested from one of the <strong>Great Würms</strong>. <p><span class="underline">When you kiss it before battle</span>, you have a <strong>1-in-6</strong> chance to <strong>automatically hit on your first attack and inflict 2× damage</strong>.</p>`,},
         ],
         extras: [
             `Do not roll on the second <strong>Starting Equipment</strong> d12 table; instead start with <strong>2 random würms in cryofreeze</strong>.`,
@@ -678,31 +689,42 @@ export const JOBS = [
     {
         name: 'The Harvester',
         descrip: `
-            You have always loved getting dirty and digging around in other people’s filth. Those who have sided with The Grimm offer a handsome bounty to those willing to harvest würms from the bodies of the fallen. You’ve made a decent living for a number of years doing just that, and you’re damn good at it. 
+            You have always loved getting <strong>dirty</strong> and <strong>digging around in other people’s filth</strong>. 
+            Those who have sided with <strong>The Grimm</strong> offer a handsome bounty to those willing to harvest <strong>würms</strong> from the bodies of the fallen. 
+            You’ve made a decent living for a number of years doing just that, and <strong>you’re damn good at it</strong>. 
         `,
         details: {
             title: 'BOTTOM-FEEDER',
             table: [
-                `You awoke under a pile of your fellow Legionnaires who were all slaughtered by The Grimm. For some reason, THEY let you live. Why?`,
-                `As a child, you found a lonely würm and fed it pieces of your puppy. It became your best friend until your parents made you throw it in the local incinerator.`,
-                `You lived on the Waste Barges of Khallar until Shit King Saule caught you skimming off his treasures. You were exiled from the waste you called home.`,
-                `The Grimm came to your rock. You laughed as you watched the hierarchy crumble and the wealthy oppressors meet their demise. The Grimm laughed with you.`,
-                `You were birthed on a starship in the Bitter Void, to a mother long infected by The Grimm. The Grimm had no use of inhabiting an infant, and you managed to survive growing up amongst them. You whisper sweet nothings to them, and they seem to understand.`,
-                `You stowed away on starships to see as much of the ’verse as you could. After an entire crew was slaughtered by The Grimm, you escaped to a small asteroid.`,
+                `You awoke under a pile of your fellow <strong>Legionnaires</strong> who were all slaughtered by <strong>The Grimm</strong>. For some reason, <strong>THEY</strong> let you live. <strong>Why</strong>?`,
+                `As a child, you found a lonely <strong>würm</strong> and fed it pieces of your puppy. It became your <strong>best friend</strong> until your parents made you throw it in the local <strong>incinerator</strong>.`,
+                `You lived on the <strong>Waste Barges of Khallar</strong> until <strong>Shit King Saule</strong> caught you skimming off his treasures. <strong>You were exiled from the waste you called home</strong>.`,
+                `<strong>The Grimm</strong> came to your rock. You laughed as you watched the hierarchy crumble and the wealthy oppressors meet their demise. <strong>The Grimm laughed with you</strong>.`,
+                `You were birthed on a starship in the <strong>Bitter Void</strong>, to a mother long infected by <strong>The Grimm</strong>. <strong>The Grimm</strong> had no use of inhabiting an infant, and you managed to survive growing up amongst them. <strong>You whisper sweet nothings to them, and they seem to understand</strong>.`,
+                `You stowed away on starships to see as much of the ’verse as you could. <strong>After an entire crew was slaughtered by The Grimm</strong>, you escaped to a small asteroid.`,
             ]
         },
         skillz: [
             {
                 title: `EYE FOR TREASURE`,
-                descrip: `Your eyes naturally go to anything of value. When simply scanning a space, tests to see anything of value are DR −2. If actively searching for valuables, DR −4. `,
+                descrip: `
+                Your eyes naturally go to anything of value. 
+                <p>
+                    <div>When simply scanning a space, tests to see anything of value are <strong>DR −2</strong>.</div>
+                    <div><span class="underline">If actively searching for valuables</span>, <strong>DR −4</strong>.</div>
+                </p> `,
             },
             {
                 title: `GRIMM FAMILY`,
-                descrip: `The Grimm can sense there is something about you they don’t want to infect. If you fail your Grimm Parasite roll, you may reroll once.`,
+                descrip: `
+                The Grimm can sense there is something about you they don’t want to infect. 
+                <p><span class="underline">If you fail your Grimm Parasite roll</span>, <strong>you may reroll once</strong>.</p>`,
             },
             {
                 title: `EXTRACTION TOOLS`,
-                descrip: `Rusted and notched but still incredibly sharp, these tools have been your lucky charms when dissecting cadavers to retrieve würms. Whenever using these instruments in a surgical situation, DR −2.`,
+                descrip: `
+                Rusted and notched but still incredibly sharp, these tools have been your lucky charms when dissecting cadavers to retrieve <strong>würms</strong>. 
+                <span class="underline">Whenever using these instruments in a surgical situation</span>, <strong>DR −2</strong>.`,
             },
             {
                 title: `PET WÜRM`,
@@ -722,11 +744,22 @@ export const JOBS = [
             },
             {
                 title: `BILE VIALS`,
-                descrip: `Harvesting würms, you have found ways to extract bile by inserting a straw into their mouths and gently slurping out their stomachs’ contents. You like the way it makes your lips tingle before spitting it into one of your filthy vials. You start with 2d12 vials that can be thrown for d6 damage or coat a weapon or bullet to gain additional d4 damage. If you have a live or recently deceased würm, Agility DR12 test to replenish d2 vials.`,
+                descrip: `
+                Harvesting würms, you have found ways to extract bile by inserting a straw into their mouths and gently slurping out their stomachs’ contents. 
+                You like the way it makes your lips tingle before spitting it into one of your filthy vials. 
+                <p>
+                    <div>You start with <strong>2d12 vials</strong> that can be thrown for <strong>d6 damage</strong> or coat a weapon or bullet to gain additional <strong>d4 damage</strong>.</div>
+                    <div><span class="underline">If you have a live or recently deceased <strong>würm</strong></span>,<strong> Agility DR12 TEST</strong> to replenish <strong>d2 vials</strong>.</div>
+                </p>`,
             },
             {
                 title: `NET WORTH`,
-                descrip: `You’ve collected the molted sacs of a hundred würms as they grew. Your hands have sewn these trophies together with plucked hairs of The Grimm. Finely aged, this naturally sticky net is perfect for trapping your prey. When thrown (up to 30′), Presence DR12 test to capture any creature within 10′ of where it lands.`,
+                descrip: `You’ve collected the molted sacs of a hundred würms as they grew. 
+                Your hands have sewn these trophies together with plucked hairs of <strong>The Grimm</strong>. 
+                <p>
+                    <div>Finely aged, this naturally sticky net is perfect for trapping your prey.</div>
+                    <div><span class="underline">When thrown (<strong>up to 30′</strong>)</span>, <strong>Presence DR12 TEST</strong> to capture any creature within <strong>10′</strong> of where it lands.</div>
+                </p>`,
             },
         ],
         extras: [
@@ -1306,6 +1339,244 @@ export const ADDITIONAL_JOBS = [
             weapons: 0,
             blood: 8,
             armor: 4,
+        },
+        isBot: false,
+    },
+    //Nahtug Engineer
+    {
+        name: 'Nahtug Engineer *',
+        descrip: `
+            You and your fellow <strong>Nahtugs</strong> made it out of your galaxy before it imploded. 
+            The experiment was a success, but you stumbled through the <strong>Hellmuth</strong> only to find your starship, <span class="underline">Salvation</span>, completely failing. 
+            Half of the massive vessel was <strong>sliced off</strong> as the würmhole closed behind you. 
+            Luckily, what remained crashed into <strong>Marauder’s Cryosfear</strong>, and you found a new home or at least a place to stay until you can find a way to somewhere better.
+        `,
+        details: {
+            title: 'GETTING HERE',
+            table: [
+                `A spoiled child of <strong>Nahtug royalty</strong>. You found your way aboard the <em>Salvation</em> through your parents’ connections. <strong>Almost everyone onboard resented you</strong>.`,
+                `You knew something was <strong>wrong with the cotalique combustor</strong> just before going into the würmhole, and <strong>you didn’t say anything</strong>.`,
+                `Deep, dark dreams <strong>haunted</strong> you long before you made it through the <strong>würmhole</strong>. You knew this is where you were headed; <strong>The Grimm</strong> called to you; <strong>THEY</strong> call to you.`,
+                `There were people ahead of you on the list to be aboard the <em>Salvation</em>. Somehow, they either ended up <strong>dead</strong> or were removed from the list. <strong>You are determined and get what you want</strong>.`,
+                `Once the <strong>lead engineer</strong>, your <strong>unethical experiments</strong> caused your demotion, but your knowledge was needed for the <em>Salvation</em> experiment.`,
+                `You were not supposed to be on the <em>Salvation</em>. You killed another <strong>Nahtug</strong> and assumed their identity. You <strong>failed terribly</strong> at their job and may have had something to do with the <strong>würmhole</strong> closing early.`,
+            ]
+        },
+        skillz: [
+            {
+                title: `BUILDING BLOCKS`,
+                descrip: `
+                    If there are pieces, you can find a way to make something out of them. <strong>Presence DR12 TEST</strong>, and it is a useful item.
+                `
+            },
+            {
+                title: `GAUGED TEMPERATURE`,
+                descrip: `
+                    When entering this ’verse, something changed inside of you on a molecular level. <strong>Extreme heat and cold have no effect on you</strong>.
+                `
+            },
+            {
+                title: 'ANKLE BITER',
+                descrip: `
+                        You have a hankering for flesh; maybe it’s the extra row of incisor teeth that makes you want to <strong>bite</strong> things. <p><strong>d6 damage</strong>.</p>
+                `
+            },
+            {
+                title: `QUICK READ`, 
+                descrip: `
+                    You see things and just get it. <strong>Presence DR12 TEST</strong> to comprehend an alien language or understand how a device works.
+                    `
+            },
+            {
+                title: `GEAR HEAD`, 
+                descrip: `As you came through the würmhole, part of the <em>Salvation</em> fused with your head. <p><strong>You now communicate with electronics in binary, reducing related tests by 2</strong>.</p>`
+            },
+            {
+                title: `DEEP POCKETS`, 
+                descrip: `
+                    You take things without even thinking. Chances are you have something in your pockets that someone else is now missing. <p><strong>Agility DR14 TEST</strong> to pull something useful out <span class="underline">2×/day</span>.</p>
+                `
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 4,
+            presence: 3,
+            toughness: -1,
+            strength: -1,
+            credits: '1d4x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 4,
+            armor: 2,
+        },
+        isBot: false,
+    },
+    //Erdverken Explorers
+    {
+        name: 'Erdverken Explorers *',
+        descrip: `
+            You and your cackle of <strong>Erdverken</strong> traversed your galaxy in search of lost antiquities. 
+            Motivated by fame, fortune, or ancient truths, every one of you had a reason to risk your lives each mission. 
+            Unlocking ancient magicks was always at the forefront of the expeditions. 
+            It was no surprise when the last <strong>Tribute</strong> found in your galaxy transported the entire facility to this <strong>miserable universe</strong>. 
+            Maybe, one day, <strong>you’ll find your way back</strong>.
+        `,
+        details: {
+            title: 'ANOTHER TIME, ANOTHER PLACE',
+            table: [
+                `<strong>Addicted to the thrill of the hunt</strong>, you pushed your cackle to find the <strong>Tribute</strong> that teleported you here, even though you knew it was <strong>cursed</strong>.`,
+                `<strong>You murdered innocents</strong> to acquire treasures for your cackle. `,
+                `Sometimes, intimidation is the best way to get information. <strong>You were the intimidation</strong>.`,
+                `You have recurring dreams of riding a <strong>Great Würm</strong> through a portal to your home galaxy.`,
+                `Before <strong>Gozer</strong> activated the <strong>Tribute</strong> that brought your cackle here, <strong>you tinkered with it</strong>, and sparks flew out.`,
+                `You sold information about <strong>Gozer</strong> to his nemesis just before your facility was transported here.`,
+
+            ]
+        },
+        skillz: [
+            {
+                title: `HORN HEAD`,
+                descrip: `
+                    You go face-first into battle. <span class="underline">On a successful attack</span>, <strong>d4 horns</strong> hit for <strong>d4 damage each</strong>.
+                `
+            },
+            {
+                title: `OBSIDIAN CLAWS`,
+                descrip: `
+                    Your nubby fingers end in sharp obsidian points (<strong>d6 damage</strong>). <span class="underline">With enough time</span>, the tips can cut through most metal.
+                `
+            },
+            {
+                title: 'NOSE FOR NAVIGATION',
+                descrip: `
+                        You know the direction of your destination, <strong>−4 DR for related TESTS</strong>.
+                `
+            },
+            {
+                title: `UNKLE EIGHT EYES`, 
+                descrip: `
+                    Each of your eight eyes can focus on different targets, <strong>−2 DR for sight-based TESTS</strong>. 
+                    `
+            },
+            {
+                title: `GRIMM SNIFFER`, 
+                descrip: `By taking a deep whiff through your nostrils, a <strong>Presence DR14 TEST</strong> tells you if something has a <strong>würm</strong> in it.`
+            },
+            {
+                title: `EYES ON THE PRIZE`, 
+                descrip: `
+                    You quickly scan a room; <strong>Presence DR14 TEST</strong> to know where the <strong>most valuable item is hidden</strong>. 
+                `
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 6,
+            agility: -2,
+            toughness: 1,
+            strength: 1,
+            credits: '1d2x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 6,
+            armor: 0,
+            tough: 1,
+        },
+        isBot: false,
+    },
+    //Cryosfeared Wrestler
+    {
+        name: 'Cryosfeared Wrestler *',
+        descrip: `
+            You’ve always been the center of attention, and <strong>now you are the center of the ring</strong>! 
+            Sure, it may only be in this haven’s wrestling league, but one day, you know you’ll make it in the <strong>Intergalactic Wrestling Federation</strong>. 
+            You just gotta keep bulking up and learning how to <strong>take a fall</strong>.
+        `,
+        details: {
+            title: 'BORN TO BRAWL',
+            table: [
+                `Raised on <strong>Haven 2</strong>, your parents were both ’verse-renowned <strong>Cryosfeared Wrestlers</strong> in their prime. Maybe, one day, you will be as <strong>famous as the two of them</strong>.`,
+                `You’ve got a gift for this type of <strong>showmanship</strong>, and <strong>you know you’re better</strong> than all the other wrestlers in the league. It’s time to show the ’verse.`,
+                `Years ago, you were mistaken for a wrestler who didn’t show. <strong>You’ve been impersonating them ever since</strong>.`,
+                `All you’ve ever wanted to do was act. <strong>But your big, dumb muscles got in the way</strong> of any chances at being taken seriously on the netwürk. So now you fly around a ring, <strong>half-naked</strong>, <strong>pretending to be tough</strong>.`,
+                `You feed off of the <strong>attention</strong> and <strong>admiration</strong> of an audience. If there is a way to have all eyes on you, <strong>you’ll find it</strong>.`,
+                `You’ve been wrestling to pay off a debt. <strong>You are now debt free</strong>.`,
+
+
+            ]
+        },
+        skillz: [
+            {
+                title: `HARDCORE`,
+                descrip: `
+                    Razors, barbed wire, ladders, chairs, it’s all part of getting the job done. 
+                    <p>You are tough as nails and are <strong>not Super Dead until you hit −4 HP</strong>. </p>
+                `
+            },
+            {
+                title: `HIGH FLYING`,
+                descrip: `
+                    Lean, mean flying machine! You’ve trained with some of the best luchadors in the sector, learning how to soar through the air with style. 
+                    <p>−<strong>2 DR to Agility tests when your feet are not on the ground</strong>. </p>
+                `
+            },
+            {
+                title: 'DREAMBOAT',
+                descrip: `
+                        Not only are you full of charisma, you also have a pretty face that should be all over the cover of <em>Teen Beat</em> netzine. 
+                        <p>
+                        <div>Everyone swoons as you work your charms. </div>
+                        <div><strong>−2 DR to Presence TESTS involving persuasion</strong>.</div>
+                        </p>
+                `
+            },
+            {
+                title: `WOOOOO`, 
+                descrip: `
+                    Stylin’ and profilin’, you put the spark in sparkle! 
+                    Even in the ring, you are dressed to impress. 
+                    Whether you are <em>intimidating</em> someone with your biceps or paying someone off with your <em>fat roll of cash</em>, everyone knows you are in charge. 
+                    <p>
+                        <div>No matter where you are, there is a chance someone knows and respects/fears you.</div>
+                        <div><strong>Presence DR10 TEST to find someone who will assist you</strong>.</div>
+                    </p>
+                    `
+            },
+            {
+                title: `JUICER`, 
+                descrip: `
+                Big and beefy is what you are. 
+                All that you want is to be the biggest bruiser in the ring.
+                <p><em>You’ve injected all sorts of cocktails into your veins</em> to bulk up those biceps, and one of the mixes went wrong, giving you a <strong>Mutation</strong></div></p>
+                `
+            },
+            {
+                title: `RIPPED`, 
+                descrip: `
+                    Any time you were confused, upset, or just plain bored, <em>you hit the gym</em>.
+                    Now you are more chiseled than a dark moon diamond from <em>Proxima B</em>.
+                    <p>
+                        <div>All that lifting has made you stronger than most.</div>
+                        <div><strong>−2 DR to all Strength TESTS</strong>.</div>
+                    </p>
+                `
+            },
+        ],
+        extras: [],
+        stats: {
+            hp: 6,
+            presence: -1,
+            toughness: 1,
+            strength: 1,
+            credits: '1d6x10',
+            favors: 2
+        },
+        gear: {
+            weapons: 2,
+            armor: 2,
         },
         isBot: false,
     },

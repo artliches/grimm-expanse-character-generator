@@ -175,6 +175,11 @@ body {
         0 0 35px var(--grim-pink);
 }
 
+.inner-list {
+    padding-left: var(--small);
+    list-style-position: outside;
+}
+
 .grimm-scroller {
     display: flex;
     overflow: hidden;
