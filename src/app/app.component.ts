@@ -22,12 +22,15 @@ export class AppComponent implements OnInit {
   currentJob: Job = {} as Job;
   jobsArray: Job[] = [];
   devoutWurm: string = '';
+  inIFrame: boolean = false;
 
   ngOnInit(): void {
       this.random.shuffleArray(JOBS);
       this.jobsArray = JSON.parse(JSON.stringify(JOBS));
 
       this.getNewJob();
+
+      this.inIFrame = window.self !== window.top;
   }
 
   getNewJob() {

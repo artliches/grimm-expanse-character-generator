@@ -1,9 +1,12 @@
 <span class="grimm-layout">
-  <header>
-    <h1 class="neon-text">
-      VAST GRIMM
-    </h1>
-  </header>
+  @if (!inIFrame) {
+    <header>
+      <h1 class="neon-text">
+        VAST GRIMM
+      </h1>
+    </header>
+  }
+
   <div class="grimm-body-layout">
     <div class="grimm-body">
       <app-toolbar
@@ -42,6 +45,6 @@
     </div>
     <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
     <div>Get more content at <a target="_blank" href="https://vastgrimm.com">vastgrimm.com</a> || Web app by <a target="_blank" href="https://artliches.github.io/dungeonsandcoding/">codeLiches</a></div>
-    <div>v0.931: Paper trail</div>
+    <div>v0.94: Matroshka</div>
   </footer>
 </span>
