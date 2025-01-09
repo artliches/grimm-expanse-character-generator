@@ -13,6 +13,7 @@
         class="toolbar"
         (printEmitter)="print()"
         (extraClassesEmitter)="enableExtraClasses($event)"
+        (rerollAllEmitter)="rerollAll()"
       ></app-toolbar>
       <app-grimm-abilities
         class="abilities"
@@ -22,6 +23,7 @@
       <app-grimm-identity
         class="identity"
         [currentJob]="currentJob"
+        [rerollAllRecieved]="triggerIdentityReroll"
       >
       </app-grimm-identity>
       <app-grimm-job
@@ -45,6 +47,6 @@
     </div>
     <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
     <div>Get more content at <a target="_blank" href="https://vastgrimm.com">vastgrimm.com</a> || Web app by <a target="_blank" href="https://artliches.github.io/dungeonsandcoding/">codeLiches</a></div>
-    <div>v0.94: Matroshka</div>
+    <div>v0.95: Shove em out the airlock</div>
   </footer>
 </span>

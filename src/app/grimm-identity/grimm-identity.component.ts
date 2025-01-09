@@ -16,6 +16,7 @@ export class GrimmIdentityComponent implements OnInit, OnChanges {
   ) {}
 
   @Input() currentJob: Job = {} as Job;
+  @Input() rerollAllRecieved: boolean = false;
 
   identityObj: Identity = {
     name: '',
@@ -37,7 +38,9 @@ export class GrimmIdentityComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      if (changes && changes['currentJob']) {
+      if (changes && changes['rerollAllRecieved'] && !changes['rerollAllRecieved'].firstChange) {
+        this.rerollAll();
+      } else if (changes && changes['currentJob']) {
         if (changes['currentJob'].currentValue && changes['currentJob'].currentValue.name === 'Brutal Savage *') {
           this.identityObj.scars = [];
           for (let i = 0; i < 2; i++) {

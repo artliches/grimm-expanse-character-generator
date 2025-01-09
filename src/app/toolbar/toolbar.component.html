@@ -1,4 +1,7 @@
 <div class="toolbar-layout">
-    <div (click)="emitPrintEvent()" class="clickable tool-button">PRINT</div>
+    <span class="left-side-buttons">
+        <div (click)="emitPrintEvent()" class="clickable tool-button">PRINT</div>
+        <div (click)="emitRerollAll()" class="clickable tool-button">OBLITERATE</div>
+    </span>
     <div (click)="toggleExtraClasses()" class="clickable tool-button">{{enableExtraClasses ? 'DISABLE' : 'ENABLE'}} EXTRA CLASSES</div>
 </div>

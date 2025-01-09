@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   jobsArray: Job[] = [];
   devoutWurm: string = '';
   inIFrame: boolean = false;
+  triggerIdentityReroll: boolean = false
 
   ngOnInit(): void {
       this.random.shuffleArray(JOBS);
@@ -31,6 +32,11 @@ export class AppComponent implements OnInit {
       this.getNewJob();
 
       this.inIFrame = window.self !== window.top;
+  }
+
+  rerollAll() {
+    this.getNewJob();
+    this.triggerIdentityReroll = !this.triggerIdentityReroll;
   }
 
   getNewJob() {
