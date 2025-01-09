@@ -213,6 +213,16 @@ body {
     }
 }
 
+a {
+    background-color: var(--grim-pink);
+    color: var(--off-white);
+    text-decoration: unset;
+    &:hover {
+        background-color: var(--off-white);
+        color: var(--grim-pink);
+    }
+}
+
 @keyframes scrolling-text {
     to {
         transform: translateX(calc(-100% - 8px));
@@ -299,6 +309,10 @@ body {
 
     footer, .wurm-card, .wurms-title {
         border-color: black !important;
+    }
+
+    footer {
+        margin-top: 1rem;
     }
 
     strong.clickable {
