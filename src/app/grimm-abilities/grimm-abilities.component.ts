@@ -79,6 +79,13 @@ export class GrimmAbilitiesComponent implements OnChanges {
       value: '',
       dieSize: 0
     },
+    {
+      name: 'neuromancy',
+      descrip: 'Activate strange Tributes',
+      value: 0,
+      rolledValue: 0,
+      modifier: 0,
+    },
   ];
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -100,6 +107,9 @@ export class GrimmAbilitiesComponent implements OnChanges {
       if (stat.name === 'favors') {
         this.rerollFavors(stat);
       }
+      if (stat.name === 'neuromancy') {
+        this.rerollNP(stat);
+      }
     });
   }
 
@@ -118,7 +128,23 @@ export class GrimmAbilitiesComponent implements OnChanges {
         this.rerollFavors(stat);
         break;
       }
+      case statName === 'neuromancy': {
+        this.rerollNP(stat);
+        break;
+      }
     }
+  }
+
+  rerollNP(stat: any) {
+    const presenceIndex = this.abilitiesObj.findIndex(ability => ability.name === 'presence');
+    const presenceVal = this.abilitiesObj[presenceIndex].value;
+
+    stat.value = 0;
+    stat.rolledValue = 0;
+
+    stat.modifier = presenceVal;
+    stat.rolledValue = this.random.getRandomNumber(1, 4);
+    stat.value = stat.rolledValue + stat.modifier > 0 ? stat.rolledValue + stat.modifier : 1;
   }
 
   rerollFavors(stat: any) {
@@ -171,6 +197,10 @@ export class GrimmAbilitiesComponent implements OnChanges {
       let hpObj = this.statsObj.find((stat: { name: string; }) => stat.name === 'hp');
       hpObj.modifier = ability!.value;
       hpObj.value = Number(hpObj.rolledValue) + hpObj.modifier > 0 ? Number(hpObj.rolledValue) + hpObj.modifier : 1;
+    } else if (abilityName === 'presence') {
+      let npObj = this.statsObj.find((stat: { name: string; }) => stat.name === 'neuromancy');
+      npObj.modifier = ability!.value;
+      npObj.value = Number(npObj.rolledValue) + npObj.modifier > 0 ? Number(npObj.rolledValue) + npObj.modifier : 1;
     }
   }
 

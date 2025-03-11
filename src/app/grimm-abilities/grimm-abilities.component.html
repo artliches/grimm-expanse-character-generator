@@ -42,7 +42,7 @@
                             <em class="rolled-dice">
                                 [
                                 {{stat.rolledValue}}
-                                @if (stat.name === 'hp') {
+                                @if (stat.name === 'hp' || stat.name === 'neuromancy') {
                                     @if (stat.modifier >= 0) {
                                         +
                                     }
