@@ -33,9 +33,11 @@
 
 header {
     h1 {
+        padding-left: var(--small);
+        padding-right: var(--small);
         font-family: 'RubikGlitch';
         letter-spacing: 2rem;
-        font-size: 2.5rem;
+        font-size: 1.2rem;
         margin: 0;
         text-align: center;
     }
@@ -54,7 +56,24 @@ footer {
 @media only screen and (min-width: 375px) {
     header {
         h1 {
-            font-size: 3rem;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 425px) {
+    header {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
+
+//TABLET
+@media only screen and (min-width: 768px) {
+    header {
+        h1 {
+            font-size: 2.3rem;
         }
     }
 }
@@ -63,7 +82,7 @@ footer {
 @media only screen and (min-width: 1024px) {
     header {
         h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
         }
     }
 
@@ -113,6 +132,11 @@ footer {
 }
 
 @media only screen and (min-width: 1440px) {
+    header {
+        h1 {
+            font-size: 4.5rem;
+        }
+    }
     .grimm-layout {
         .grimm-body-layout {
             display: grid;
